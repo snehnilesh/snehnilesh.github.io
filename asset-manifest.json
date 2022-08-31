@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/snehnilesh/snehnilesh.github.io.git/static/css/main.ba6b2923.css",
+    "main.js": "/snehnilesh/snehnilesh.github.io.git/static/js/main.78fe9879.js",
+    "static/js/787.1ed0c42c.chunk.js": "/snehnilesh/snehnilesh.github.io.git/static/js/787.1ed0c42c.chunk.js",
+    "static/media/FloatingSubscriptions.png": "/snehnilesh/snehnilesh.github.io.git/static/media/FloatingSubscriptions.7fa24d0137bffa017ba9.png",
+    "static/media/FloatingHourglass.png": "/snehnilesh/snehnilesh.github.io.git/static/media/FloatingHourglass.7507e57772a747c6d2fb.png",
+    "static/media/widgetDark.png": "/snehnilesh/snehnilesh.github.io.git/static/media/widgetDark.05e0749aa2f83fc6a577.png",
+    "static/media/FloorSubscriptions.png": "/snehnilesh/snehnilesh.github.io.git/static/media/FloorSubscriptions.a6ec8931bd792040f693.png",
+    "static/media/FloorHourglass.png": "/snehnilesh/snehnilesh.github.io.git/static/media/FloorHourglass.01f6806c1967af13e7cc.png",
+    "static/media/widgetLight.png": "/snehnilesh/snehnilesh.github.io.git/static/media/widgetLight.089bca33a145eb6b71d0.png",
+    "static/media/iCloud.png": "/snehnilesh/snehnilesh.github.io.git/static/media/iCloud.a634269e115e10b168ee.png",
+    "index.html": "/snehnilesh/snehnilesh.github.io.git/index.html",
+    "main.ba6b2923.css.map": "/snehnilesh/snehnilesh.github.io.git/static/css/main.ba6b2923.css.map",
+    "main.78fe9879.js.map": "/snehnilesh/snehnilesh.github.io.git/static/js/main.78fe9879.js.map",
+    "787.1ed0c42c.chunk.js.map": "/snehnilesh/snehnilesh.github.io.git/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ba6b2923.css",
+    "static/js/main.78fe9879.js"
+  ]
+}
