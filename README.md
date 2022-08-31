@@ -1,7 +1,3 @@
-# snehnilesh.github.io
-
-Hello.
-
 # Privacy Policy
 
 I built the Hourglass app as a Commercial app and is provided by Sneh Nilesh and is intended for use as is.
