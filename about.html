@@ -7,6 +7,7 @@
     <title>About</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <link rel="preload" href="work.html" as="document">
 </head>
 <body>
     <div class="cursor"></div>
@@ -412,6 +413,13 @@
         transition: opacity ease 1s,
                     transform ease 1s;
     }
+    .visible-60 {
+        opacity: 0.6;
+        transform: translateY(8px);
+        transform: translateY(0px);
+        transition: opacity ease 1s,
+                    transform ease 1s;
+    }
 
     .hidden:nth-child(1), .visible:nth-child(1) {
         transition-delay: 0s;
@@ -756,9 +764,13 @@
                     entry.target.classList.remove('hidden');
                 } else {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                    else {
+                        // if element has class .mini-map-selection, add class .visible-60
+                        if (entry.target.classList.contains('mini-map-selection')) {
+                            entry.target.classList.add('visible-60');
+                        } else {
+                            entry.target.classList.add('visible');
+                        }
+                    } else {
                         entry.target.classList.remove('visible');
                     }
                 }
