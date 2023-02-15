@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Work</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <link rel="preload" href="about.html" as="document">
+</head>
+<body>
+    <div class="cursor"></div>
+
+    <div class="menu">
+        <p class="menu-item-on">Work</p>
+        <a href="/about.html" class="menu-item">About</a>
+    </div>
+
+    <div id="cards">
+        <div class="card first-card card-on">
+            <div class="card-content">
+                <div class="card-top">
+                    <img src="/App Icons/LaunchDock.png" class="card-image" alt="LaunchDock">
+                    <div class="card-title">
+                        LaunchDock
+                    </div>
+                </div>
+                <img src="/App Previews/LaunchDock.png" class="card-preview-image" alt="LaunchDock Preview">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="card-top">
+                    <img src="/App Icons/SFToolkit.png" class="card-image" alt="SFToolkit">
+                    <div class="card-title">
+                        SFToolkit
+                    </div>
+                </div>
+                <img src="/App Previews/SFToolkit.png" class="card-preview-image" alt="SFToolkit Preview">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="card-top">
+                    <img src="/App Icons/SubsTrackDark.png" class="card-image" alt="SubsTrack">
+                    <div class="card-title">
+                        SubsTrack
+                    </div>
+                </div>
+                <img src="/App Previews/SubsTrack.png" class="card-preview-image" alt="SubsTrack Preview">
+            </div>
+        </div>
+        <div class="card last-card">
+            <div class="card-content">
+                <div class="card-top">
+                    <img src="/App Icons/MathToolkit.png" class="card-image" alt="MathToolkit">
+                    <div class="card-title">
+                        MathToolkit
+                    </div>
+                </div>
+                <img src="/App Previews/MathToolkit.png" class="card-preview-image" alt="MathToolkit Preview">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer slide-down">
+        <div class="footer-contents">
+            <div class="page-number page-number-left">1 </div>
+            <div class="page-number page-number-middle">—</div>
+            <div class="page-number page-number-right"> 4</div>
+        </div>
+    </div>
+</body>
+<style>
+    @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+    :root {
+        --select-menu-item: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'SF Pro Display', sans-serif;
+        /* background-color: #040e13; */
+        background-color: rgb(16, 16, 16);
+        /* background-color: black; */
+        height: 100vh;
+    }
+    html {
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        overflow: hidden;
+        cursor: none;
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+    }
+    #cards::-webkit-scrollbar {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        pointer-events: none;
+        z-index: 9995;
+        scale: 0.8;
+        margin-top: -0.8rem;
+    }
+    .menu-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu-item-on {
+        padding-riqht: 2.5rem;
+        overflow: hidden;
+        line-height: 117%;
+    }
+    .menu-item {
+        padding-left: 2.5rem;
+        overflow: hidden;
+        line-height: 117%;
+    }
+    .menu-item, .menu-item-on {
+        color: white;
+        font-size: clamp(1.2rem, 1.3vw, 1.4rem);
+        text-decoration: none;
+        pointer-events: none; transform: translate3d(0%, 0%, 0px);
+        will-change: transform;
+        transform: translate3d(0, 110%, 0);
+        pointer-events: all;
+        transition: opacity 300ms var(--select-menu-item);
+    }
+    .menu-item-on, .menu-item:hover {
+        opacity: 0.8;
+        font-weight: 425;
+    }
+    .page-number {
+        opacity: 0.8;
+        font-weight: 350;
+        color: white;
+        /* font-size: 14px; */
+        font-size: clamp(1rem, 1.1vw, 1.2rem);
+    }
+    .page-number-left, .page-number-right {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        /* font-size: 18px; */
+        font-size: clamp(1rem, 1.1vw, 1.2rem);
+    }
+    .menu div {
+        margin-right: 22px;
+        margin-left: 22px;
+        white-space: nowrap;
+    }
+    .menu-item {
+        opacity: 0.3;
+        font-weight: 300;
+        cursor: none;
+    }
+    :root {
+        --card-color: rgb(20, 20, 20);
+    }
+    #cards {
+        height: 80vh;
+        display: flex;
+        gap: 24px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        cursor: none;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        justify-self: center;
+        align-items: center;
+        margin: 0;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+    #cards:hover > .card::after {
+        opacity: 1;
+    }
+    .card {
+        background-color: rgba(255, 255, 255, 0.01);
+        border-radius: 24px;
+        overflow: hidden;
+        cursor: none;
+        min-width: 500px;
+        min-height: 62.5vh;
+        flex-direction: row;
+        position: relative;
+        scroll-snap-align: center;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.1);
+    }
+    .first-card {
+        margin-left: 50vw;
+    }
+    .last-card {
+        margin-right: 50vw;
+    }
+    .card:hover::before {
+        opacity: 1;
+    }
+    .card::before,
+    .card::after {
+        border-radius: inherit;
+        content: "";
+        height: 100%;
+        left: 0px;
+        opacity: 0;
+        position: absolute;
+        top: 0px;
+        transition: opacity 500ms;
+        width: 100%;
+    }
+    .spacer {
+        width: 50vw;
+    }
+    .card::before {
+        background: radial-gradient(
+            1000px circle at var(--mouse-x) var(--mouse-y), 
+            rgba(255, 255, 255, 0.015),
+            transparent 40%
+        );
+        z-index: 3;
+    }
+    .card::after {  
+        background: radial-gradient(
+            1000px circle at var(--mouse-x) var(--mouse-y), 
+            rgba(255, 255, 255, 0.15),
+            transparent 40%
+        );
+        z-index: 1;
+    }
+    .card > .card-content {
+        background-color: var(--card-color);
+        border-radius: inherit;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        inset: 1px;
+        padding: 10px;
+        position: absolute;
+        z-index: 2;
+    }
+    @media(min-height: 650px) {
+        #cards {
+           margin-top: 4vh;
+        }
+    }
+    @media(max-width: 1160px) {
+        .card {
+            min-height: 62.5vh;
+        }
+    }
+    @media(max-width: 625px) {
+        .card {
+            min-width: 80vw;
+            min-height: 62.5vh;
+        }
+        #cards {
+            gap: 24px;
+        }
+    }
+    .footer {
+        display: flex;
+        position: fixed;
+        bottom: 3rem;
+        justify-content: center;
+        align-items: center;
+        float: left;
+        text-align: center;
+        will-change: transform;
+        width: 100%;
+        scale: 0.8;
+        margin-bottom: -0.8rem;
+    }
+    .footer-contents {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: left;
+        text-align: center;
+        will-change: transform;
+    }
+    .card-on {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    .cursor {
+        position: fixed;
+        left: 0;
+        pointer-events: none;
+        border-radius: 50%;
+        transition: transform 0s;
+        background: white;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.5s,
+                    border-radius 0.2s,
+                    width 0.2s,
+                    height 0.2s
+    }
+    .slide-up {
+        animation: slideUp ease-in-out 0.8s;
+    }
+    @keyframes slideUp {
+        0% {transform: translateY(24px);opacity: 0;}
+    }
+    .slide-down {
+        animation: slideDown ease-in-out 0.8s;
+    }
+    @keyframes slideDown {
+        0% {transform: translateY(8px);opacity: 0;}
+        100% {transform: translateY(0);opacity: 1;}
+    }
+    .slide-left {
+        animation: slideLeft ease-in-out 1.2s;
+    }
+    @keyframes slideLeft {
+        0% {transform: translateX(40vw);opacity: 0;}
+        100% {transform: translateX(-12vw);opacity: 1;}
+    }
+    .card-title {
+        font-size: 32px;
+        font-weight: 500;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.8;
+        display: flex;
+    }
+    .card-image {
+        width: 40px;
+        height: 40px;
+        object-fit: fill;
+        display: block;
+        margin-right: 10%;
+        border: 1px;
+        border-radius: 12px;
+        border-style: solid;
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+    .card-top {
+        margin: 3rem;
+        margin-left: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: flex-start;
+        align-self: center;
+    }
+    .card-preview-image {
+        height: 100%;
+        object-fit: scale-down;
+    }
+    @media(max-height: 500px) {
+        .card-preview-image {
+            display: none;
+        }
+        .card {
+            background: none;
+            box-shadow: none;
+        }
+        .card-content {
+            /* center vertically */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .card::before,
+        .card::after {
+            opacity: 0;
+        }
+        .card > .card-content {
+            background: none;
+        }
+    }
+    @media (prefers-color-scheme: light) {
+        /* text */
+        .text-main {
+            color: black;
+        }
+        .text-header {
+            color: black;
+        }
+        .text-sub {
+            color: black;
+        }
+        .text-subdate {
+            color: black;
+        }
+        a {
+            color: black;
+        }
+        .menu-item {
+            color: black;
+        }
+        .menu-item-on {
+            color: black;
+        }
+        /* background */
+        body {
+            background-color: white;
+        }
+        .page-number-right, .page-number-left, .page-number {
+            color: black;
+        }
+        .cursor {
+            background: black;
+        }
+        /* card */
+        :root {
+            --card-color: white;
+        }
+        .card {
+            background-color: white;
+        }
+        .card::before {
+            background: radial-gradient(
+                1000px circle at var(--mouse-x) var(--mouse-y), 
+                rgba(0, 0, 0, 0.04),
+                transparent 40%
+            );
+        }
+        .card::after {
+            background: radial-gradient(
+                1000px circle at var(--mouse-x) var(--mouse-y), 
+                rgba(0, 0, 0, 0.2),
+                transparent 40%
+            );
+        }
+        .card-on {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        .card-title {
+            color: black;
+        }
+        .card-image {
+            border: 0px;
+        }
+        .card-top {
+            margin: 3rem;
+            margin-left: 2rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: flex-start;
+            align-self: center;
+        }
+        .card-preview-image {
+            height: 100%;
+            object-fit: scale-down;
+        }
+    }
+</style>
+<script>
+
+    document.getElementById("cards").onmousemove = e => {
+        console.log(window.innerHeight)
+        if (window.innerHeight > 500.1) {
+            for(const card of document.getElementsByClassName("card")) {
+            const rect = card.getBoundingClientRect(),
+                x = e.clientX - rect.left,
+                y = e.clientY - rect.top;
+
+            card.style.setProperty("--mouse-x", `${x}px`);
+            card.style.setProperty("--mouse-y", `${y}px`);
+        };
+        }
+    }
+
+    const cards = document.getElementById("cards");
+    const numCards = cards.childElementCount;
+
+    document.getElementsByClassName("page-number-right").innerHTML = numCards;
+
+    // get current card
+    let currentCard = 1;
+    cards.addEventListener("scroll", () => {
+        // get which card is currently in the center
+        const cardWidth = cards.children[0].offsetWidth;
+        const scrollLeft = cards.scrollLeft;
+        const cardNum = Math.round(scrollLeft / cardWidth);
+
+        if (cardNum !== currentCard) {
+            currentCard = cardNum;
+            if (currentCard < 1) {
+                currentCard = 1;
+            }
+            document.getElementsByClassName("page-number-left")[0].innerHTML = currentCard;
+        }
+
+        for (const card of cards.children) {
+            card.classList.remove("card-on");
+        }
+        
+        const card = cards.children[currentCard -1];
+        card.classList.add("card-on");
+    });
+
+    gsap.set('.cursor',{xPercent:-50, yPercent: -50})
+
+    let cursor = document.querySelector('.cursor')
+
+    let mouseX;
+    let mouseY;
+
+    window.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        gsap.to(cursor, 0.25, {x: mouseX, y:mouseY})
+    })
+
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            gsap.to(cursor, 0.25, {scale: 1.5})
+        })
+        card.addEventListener('mouseleave', () => {
+            gsap.to(cursor, 0.25, {scale: 1})
+
+        })
+    })
+
+    document.querySelectorAll('a,p,.footer-contents').forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            gsap.to(cursor, 0.25, {scale: 1.5})
+            cursor.style.borderRadius = "16px";
+            cursor.style.width = "60px";
+            cursor.style.height = "24px";
+        })
+        link.addEventListener('mouseleave', () => {
+            gsap.to(cursor, 0.25, {scale: 1})
+            cursor.style.borderRadius = "999px";
+            cursor.style.width = "20px";
+            cursor.style.height = "20px";
+        })
+    })
+
+    // after 1 second of inactivity, hide the cursor
+    let timeout;
+    document.addEventListener('mousemove', () => {
+        clearTimeout(timeout);
+        cursor.style.opacity = 0.1;
+        timeout = setTimeout(() => {
+            cursor.style.opacity = 0;
+        }, 1000);
+    });
+    
+    // add scroll-snap-type: x mandatory; to #cards after 1 second
+    setTimeout(() => {
+        cards.style.scrollSnapType = "x mandatory";
+    }, 1520);
+
+    // allow use of arrow keys to scroll through cards from anywhere on the page
+    document.addEventListener("keydown", e => {
+        if (e.key === "ArrowRight") {
+            cards.scrollTo({
+                left: cards.scrollLeft + cards.children[0].offsetWidth,
+                behavior: "smooth"
+            });
+        } else if (e.key === "ArrowLeft") {
+            cards.scrollTo({
+                left: cards.scrollLeft - cards.children[0].offsetWidth,
+                behavior: "smooth"
+            });
+        }
+    });
+
+    // use mouse drag to scroll through cards
+    let mouseDown = false;
+    let mouseDownX = 0;
+    let mouseDownScrollLeft = 0;
+    document.addEventListener("mousedown", e => {
+        mouseDown = true;
+        mouseDownX = e.clientX;
+        mouseDownScrollLeft = cards.scrollLeft;
+    });
+    document.addEventListener("mouseup", () => {
+        mouseDown = false;
+    });
+    document.addEventListener("mouseleave", () => {
+        mouseDown = false;
+    });
+    document.addEventListener("mousemove", e => {
+        if (!mouseDown) return;
+        e.preventDefault();
+        const x = e.clientX;
+        const walk = (x - mouseDownX) * 1.5;
+        cards.scrollTo({
+            left: mouseDownScrollLeft - walk,
+            behavior: "smooth"
+        });
+    });
+
+    let isMobile = navigator.appVersion.includes('iPhone') || navigator.appVersion.includes('Android');
+    
+    if(isMobile) {
+        cursor.style.display = "none";
+    }
+</script>
+</html>

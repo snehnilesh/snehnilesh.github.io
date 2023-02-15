@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>About</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <link rel="preload" href="work.html" as="document">
+</head>
+<body>
+    <div class="cursor"></div>
+
+    <div class="menu">
+        <a href="/work.html" class="menu-item work">Work</a>
+        <p class="menu-item-on about">About</p>
+    </div>
+    
+    <div class="main">
+        <div class="full-height hidden">
+            <div class="text-main">
+                An Independant Developer currently <br/>
+                studying Computer Science at the <br/>
+                University of Kent.
+                <br/><br/>
+                Passionate about problem solving <br/>
+                and the future, deeply enjoying the <br/>
+                process of learning and creating. <br/>
+            </div>
+        </div>
+
+        <div class="text-main full-height hidden">
+            Education
+            
+            <div class="text-header inset hidden spacer-top-large">
+                University of Kent
+            </div>
+            <div class="text-subdate inset hidden">
+                September 2020 - June 2026
+            </div>
+            <div class="text-sub inset hidden spacer-top">
+                BSc Computer Science
+            </div>
+            <div class="text-header inset hidden spacer-top-large">
+                Rainham Mark Grammar School
+            </div>
+            <div class="text-subdate inset hidden">
+                September 2015 - September 2020
+            </div>
+            <div class="text-sub inset hidden spacer-top">
+                A-Level Computer Science
+            </div>
+            <div class="text-sub inset hidden">
+                A-Level Mathematics
+            </div>
+
+            <div class="text-sub inset hidden">
+                A-Level Physics
+            </div>
+        </div>
+
+        <div class="text-main full-height hidden">
+            General Skills
+
+            <div class="text-header inset hidden spacer-top-large">
+                Adobe Creative Suite
+            </div>
+            <div class="text-subdate inset hidden">
+                Advanced
+            </div>
+            <div class="text-sub inset hidden spacer-top">
+                Used in the creation of logos, graphics and </br>
+                animations for both branding and marketing <br/>
+                purposes.
+            </div>
+
+            <div class="text-header inset hidden spacer-top-large">
+                Microsoft Office
+            </div>
+            <div class="text-subdate inset hidden">
+                Advanced
+            </div>
+            <div class="text-sub inset hidden spacer-top">
+                Frequently used for tracking and analysing <br/>
+                data, along with creating presentations and <br/>
+                reports.
+            </div>
+
+            <div class="text-header inset hidden spacer-top-large">
+                Sketch
+            </div>
+            <div class="text-subdate inset hidden">
+                Advanced
+            </div>
+            <div class="text-sub inset hidden spacer-top">
+                I regularly use Sketch to craft interfaces <br/>
+                for my projects, creating prototypes <br/>
+                and testing to improve the user experience.
+            </div>
+        </div>
+
+        <div class="text-main full-height hidden">
+            Soft Skills
+
+            <div class="text-header inset hidden spacer-top-large">
+                Teamwork
+            </div>
+            <div class="text-subdate inset hidden">
+                Advanced
+            </div>  
+            <div class="text-sub inset hidden spacer-top">
+                Regularly participate in collaborative <br/>
+                projects, most notably the notes project in <br/>
+                conjunction with fellow programmer Avi <br/>
+                Mukesh.
+            </div> 
+        </div>
+
+        <div class="text-main full-height hidden">
+            Programming Skills
+
+            <!-- <div class="text-header inset hidden spacer-top-large">
+                HTML & CSS
+            </div> 
+            <div class="text-sub inset hidden">
+                Bootstrap
+            </div>
+            <div class="text-sub inset hidden">
+                Bulma
+            </div>
+            <div class="text-sub inset hidden">
+                Tailwind
+            </div> -->
+
+            <!-- <div class="text-header inset hidden spacer-top-large">
+                Java
+            </div> -->
+
+            <div class="text-header inset hidden spacer-top-large">
+                JavaScript
+            </div>
+            <div class="text-sub inset hidden">
+                jQuery
+            </div>
+            <div class="text-sub inset hidden">
+                React
+            </div>
+            <div class="text-sub inset hidden">
+                MongoDB
+            </div>
+
+            <div class="text-header inset hidden spacer-top-large">
+                Python
+            </div>
+            <div class="text-sub inset hidden">
+                Flask
+            </div>
+            <div class="text-sub inset hidden">
+                OpenCV
+            </div>
+            <div class="text-sub inset hidden">
+                Pandas
+            </div>
+                    
+            <!-- <div class="text-header inset hidden spacer-top-large">
+                SQL
+            </div> -->
+
+            <div class="text-header inset hidden spacer-top-large">
+                Swift
+            </div>
+            <div class="text-sub inset hidden">
+                Alamofire
+            </div>
+            <div class="text-sub inset hidden">
+                CloudKit
+            </div>
+            <div class="text-sub inset hidden">
+                SwiftUI
+            </div>
+        </div>
+
+        <div class="text-main bottom hidden">
+            Contact
+            
+            <div class="text-sub inset hidden spacer-top-large">
+                <div class="text-sub inset hidden">
+                    <a href="mailto: snehnilesh123@hotmail.com">Email</a>
+                </div>
+                <div class="text-sub inset hidden">
+                    <a href="">GitHub</a>
+                </div>
+                <div class="text-sub inset hidden">
+                    <a href="">Instagram</a>
+                </div>
+                <div class="text-sub inset hidden">
+                    <a href="">LinkedIn</a>
+                </div>
+                <div class="text-sub inset hidden">
+                    <a href="">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mini-map hidden"></div>
+    <div class="mini-map-selection hidden"></div>
+</body>
+<style>
+    @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+    :root {
+        --select-menu-item: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    body {
+        white-space: nowrap;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        font-family: 'SF Pro Display', sans-serif;
+        background-color: rgb(16, 16, 16);
+        scroll-behavior: smooth;
+        overscroll-behavior: none;
+        cursor: none !important;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+    }
+    *::-webkit-scrollbar {
+        display: none;
+    }
+    .spacer-top {
+        margin-top: 1.5rem;
+    }
+    .spacer-top-large {
+        margin-top: 5rem;
+    }
+    .menu {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        pointer-events: none;
+        z-index: 9995;
+        scale: 0.8;
+        margin-top: -0.8rem;
+    }
+    .menu-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu-item-on {
+        padding-left: 1.25rem;
+        overflow: hidden;
+        line-height: 117%;
+    }
+    .menu-item {
+        padding-right: 1.25rem;
+        overflow: hidden;
+        line-height: 117%;
+    }
+    .menu-item, .menu-item-on {
+        color: white;
+        font-size: clamp(1.2rem, 1.3vw, 1.4rem);
+        text-decoration: none;
+        pointer-events: none; transform: translate3d(0%, 0%, 0px);
+        will-change: transform;
+        transform: translate3d(0, 110%, 0);
+        pointer-events: all;
+        transition: opacity 300ms var(--select-menu-item);
+    }
+    .menu-item-on, .menu-item:hover {
+        opacity: 0.8;
+        font-weight: 425;
+    }
+    .menu div {
+        margin-right: 22px;
+        margin-left: 22px;
+        white-space: nowrap;
+    }
+    .menu-item {
+        opacity: 0.3;
+        font-weight: 300;
+        cursor: none !important;
+    }
+    .bottom {
+        margin-bottom: 50%;
+    }
+    .cursor {
+        position: fixed;
+        left: 0;
+        pointer-events: none;
+        border-radius: 50%;
+        transition: transform 0s;
+        background: white;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.5s,
+                    border-radius 0.2s,
+                    width 0.2s,
+                    height 0.2s
+    }
+    .slide-up {
+        animation: slideUp ease-in-out 0.8s;
+    }
+    @keyframes slideUp {
+        0% {transform: translateY(24px);opacity: 0;}
+    }
+    .slide-down {
+        animation: slideDown ease-in-out 0.8s;
+    }
+    @keyframes slideDown {
+        0% {transform: translateY(8px);opacity: 0;}
+        100% {transform: translateY(0);opacity: 1;}
+    }
+    .mini-map {
+        position: fixed;
+        padding-top: 30%;
+        left: calc(40px + 3vw);
+        width: 15%;
+        will-change: transform;
+    }
+    .mini-map-selection {
+        position: fixed;
+        display: flex;
+        margin-top: 7.5vw;
+        left: 47.5px;
+        width: 15vw;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.015);
+        border-style: solid;
+        opacity: 0.6;
+        will-change: opacity;
+        z-index: 9999;
+        border-radius: 8px;
+        scale: 0.25;
+        transform-origin: top left;
+    }
+    .main {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        display: flex;
+        justify-content: left;
+        pointer-events: none;
+        position: absolute;
+        overflow: scroll;
+        line-height: 1.5;
+        margin-top: 18vw;
+    }
+    .full-height {
+        margin-bottom: 28%;
+    }
+    .text-main {
+        /* font-size: 3.5rem; */
+        font-size: clamp(1rem, 2.75vw, 3.5rem);
+        color: white;
+        font-weight: 300;
+        text-align: left;
+        /* transition: all; */
+    }
+    .text-header {
+        font-size: clamp(0.875rem, 2vw, 2.625rem);
+        color: white;
+        font-weight: 225;
+        text-align: left;
+        width: 80%;
+    }
+    .text-sub {
+        font-size: clamp(0.75rem, 1.25vw, 1.75rem);
+        color: white;
+        opacity: 0.4 !important;
+        font-weight: 150;
+        text-align: left;
+        width: 80%;
+    }
+    .text-subdate {
+        font-size: clamp(0.8rem, 1.5vw, 1.8rem);
+        color: white;
+        opacity: 0.6 !important;
+        font-weight: 150;
+        text-align: left;
+        width: 80%
+    }
+    .inset {
+        margin-left: 0;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        pointer-events: all;
+        cursor: none !important;
+    }
+    .hidden {
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity ease 1s,
+                    transform ease 1s;
+
+    }
+    .visible {
+        opacity: 1;
+        transform: translateY(0px);
+        transition: opacity ease 1s,
+                    transform ease 1s;
+    }
+
+    .hidden:nth-child(1), .visible:nth-child(1) {
+        transition-delay: 0s;
+    }
+    .hidden:nth-child(2), .visible:nth-child(2) {
+        transition-delay: 0.075s;
+    }
+    .hidden:nth-child(3), .visible:nth-child(3) {
+        transition-delay: 0.15s;
+    }
+    .hidden:nth-child(4), .visible:nth-child(4) {
+        transition-delay: 0.225s;
+    }
+    .hidden:nth-child(5), .visible:nth-child(5) {
+        transition-delay: 0.3s;
+    }
+
+    @keyframes fadeUp {
+        0% {transform: translateY(64px);opacity: 0;}
+    }
+    @media(prefers-reduced-motion: reduce) {
+        .hidden {
+            transition: none;
+        }
+    }
+    @media (prefers-color-scheme: light) {
+        /* text */
+        .text-main {
+            color: black;
+        }
+        .text-header {
+            color: black;
+        }
+        .text-sub {
+            color: black;
+        }
+        .text-subdate {
+            color: black;
+        }
+        a {
+            color: black;
+        }
+        .menu-item {
+            color: black;
+        }
+        .menu-item-on {
+            color: black;
+        }
+        /* background */
+        html {
+            background-color: white;
+        }
+        .mini-map-selection {
+            background-color: rgba(0, 0, 0, 0.025);
+        }
+        /* border */
+        .mini-map-selection {
+            border: 1px solid rgba(0, 0, 0, 0.4);
+        }
+        .cursor {
+            background: black;
+        }
+    }
+</style>
+<script>
+    // print preferred color scheme
+    console.log("prefers-color-scheme: " + window.matchMedia("(prefers-color-scheme: light)").matches);
+
+    window.onload = function() {
+        window.scrollTo(0, 0);
+        document.addEventListener('contextmenu', 
+            event => event.preventDefault()
+        );
+
+        //select element with mini-map class
+        const miniMap = document.querySelector('.mini-map');
+        
+        document.addEventListener("keydown", function (event){
+            if (event.ctrlKey){
+                event.preventDefault();
+            }
+            if(event.keyCode == 123){
+                event.preventDefault();
+            }
+            if(event.keyCode == 83){
+                event.preventDefault();
+            }
+            // on arrow keys up and down scroll page 2x faster
+            if (event.keyCode == 38 || event.keyCode == 40) {
+                event.preventDefault();
+                // get current scroll position
+                var scrollPosition = window.pageYOffset;
+                // height of page
+                var windowHeight = document.documentElement.clientHeight;
+                // scroll to new position
+                window.scrollTo({
+                    top: scrollPosition + (event.keyCode == 38 ? -1 : 1) * windowHeight / 4,
+                    behavior: 'smooth'
+                });
+            }
+        });
+
+        let isMobile = navigator.appVersion.includes('iPhone') || navigator.appVersion.includes('Android');
+        document.body.style.opacity = 1;
+
+        gsap.set('.cursor',{xPercent: -50, yPercent: -50})
+
+        let cursor = document.querySelector('.cursor')
+
+        let mouseX;
+        let mouseY;
+
+        window.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            gsap.to(cursor, 0.25, {x: mouseX, y:mouseY})
+        })
+
+        document.querySelectorAll('a,p').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                gsap.to(cursor, 0.25, {scale: 1.5})
+                cursor.style.borderRadius = "16px";
+                cursor.style.width = "60px";
+                cursor.style.height = "24px";
+            })
+            link.addEventListener('mouseleave', () => {
+                gsap.to(cursor, 0.25, {scale: 1})
+                cursor.style.borderRadius = "999px";
+                cursor.style.width = "20px";
+                cursor.style.height = "20px";
+            })
+        })
+
+        document.querySelectorAll('.mini-map-selection').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            gsap.to(cursor, 0.25, {scale: 1.5})
+        })
+        card.addEventListener('mouseleave', () => {
+            gsap.to(cursor, 0.25, {scale: 1})
+
+        })
+    })
+
+        // Inactive Cursor Opacity
+        let timeout;
+        document.addEventListener('mousemove', () => {
+            clearTimeout(timeout);
+            cursor.style.opacity = 0.1;
+            timeout = setTimeout(() => {
+                cursor.style.opacity = 0;
+            }, 1000);
+        });
+
+        // get size of open window
+        let viewportHeight = window.innerHeight;
+        let viewportWidth = window.innerWidth;
+
+        // // reduce scale of .menu div when page is scrolled
+        // let menu = document.querySelector('.menu');
+        // window.addEventListener('scroll', () => {
+        //     let scroll = window.scrollY;
+        //     let scale = 1 - (scroll / 1000);
+        //     if (scale < 0.8) {
+        //         scale = 0.8;
+        //     }
+        //     menu.style.transform = `scale(${scale})`;
+        // })
+
+        // Scroll To Top
+        document.addEventListener('click', e => {
+            let x = e.clientX;
+            let y = e.clientY;
+        })
+        let menuHeight = document.querySelector('.menu').offsetHeight;
+        document.addEventListener('click', e => {
+            let x = e.clientX;
+            let y = e.clientY;
+            if (y < menuHeight) {
+                window.scrollTo(0, 0);
+            }
+        });
+
+        let miniMapSelection = document.querySelector('.mini-map-selection');
+
+        // mini map opacity to 0.6
+        miniMap.style.opacity = 0.6;
+
+        if(!isMobile) {
+            fetch('about.html')
+            .then(response => response.text())
+            .then(data => {
+                miniMap.innerHTML = data;
+                // remove all elements with class "menu" within data
+                miniMap.querySelectorAll('.menu').forEach(e => e.remove());
+                // remove all elements with class "mini map" within data
+                miniMap.querySelectorAll('.mini-map').forEach(e => e.remove());
+                // remove all elements with class "mini map selection" within data
+                miniMap.querySelectorAll('.mini-map-selection').forEach(e => e.remove());
+                // remove class hidden from any elements with class hidden
+                miniMap.querySelectorAll('.hidden').forEach(e => e.classList.remove('hidden'));
+                // replace class inset with style margin-left: 2rem
+                miniMap.querySelectorAll('.inset').forEach(e => e.style.marginLeft = "5rem");
+            });
+
+            miniMap.style.scale = "0.25";
+            miniMap.style.transformOrigin = "top left";
+
+            // scroll mini-map in opposite direction of scroll
+            window.addEventListener('scroll', () => {
+                let scroll = window.scrollY;
+                miniMap.style.transform = `translateY(-${scroll/2}px)`;
+            })
+
+            // scroll mini map selection to match scroll
+            window.addEventListener('scroll', () => {
+                let scroll = window.scrollY;
+                miniMapSelection.style.transform = `translateY(${scroll/2}px)`;
+            })
+
+            // make mini map selection size reflect viewport size
+            miniMapSelection.style.height = viewportHeight + "px";
+            miniMapSelection.style.width = viewportWidth * 0.65 + "px";
+
+            // get the leftmost position of the menu bar tab with the text "Work"
+            let aboutTab = document.querySelector('.about');
+            let aboutTabLeft = aboutTab.offsetLeft;
+
+            // get the leftmost position of the menu bar tab with the text "Work"
+            let workTab = document.querySelector('.work');
+            let workTabLeft = workTab.offsetLeft;
+
+            // start the .main div at the leftmost position of the menu bar tab with the text "Work"
+            let textSub = document.querySelectorAll('.text-sub');
+            
+            textSub.forEach(text => {
+                text.style.marginLeft = aboutTabLeft - workTabLeft + 16 + "px";
+                let inset = document.querySelectorAll('.inset');
+                inset.forEach(element => {
+                    element.style.marginLeft = aboutTabLeft - workTabLeft + 16 + "px";
+                });
+            })
+
+            // start the .main div at the leftmost position of the menu bar tab with the text "Work"
+            let main = document.querySelector('.main');
+            main.style.marginLeft = workTabLeft + "px";
+
+            // when the window is resized, change the .main div's padding-left to match the leftmost position of the menu bar tab with the text "Work"
+            window.addEventListener('resize', () => {
+                let workTab = document.querySelector('.work');
+                let workTabLeft = workTab.offsetLeft;
+
+                let main = document.querySelector('.main');
+                main.style.marginLeft = workTabLeft + "px";
+            })
+
+            // on resize, change the classes .mini-map-selection and .mini-map to match the new viewport size
+            window.addEventListener('resize', () => {
+                let viewportWidth = window.innerWidth;
+                let viewportHeight = window.innerHeight;
+                miniMapSelection.style.width = viewportWidth * 0.65 + "px";
+                miniMapSelection.style.height = viewportHeight + "px";
+            })
+
+        } else {
+            // move menu to right side of screen
+            let menu = document.querySelector('.menu');
+            // flex-direction: column;
+            menu.style.flexDirection = "row";
+            menu.style.justifyContent = "flex-end";
+            // hide cursor
+            cursor.style.display = "none";
+
+            // remove elements with classes .mini map selection and .mini map
+            document.querySelectorAll(".mini-map-selection").forEach(el => el.remove());
+            document.querySelectorAll(".mini-map").forEach(el => el.remove());
+
+            // make text-sub and text-main classes have no padding
+            let textSub = document.querySelectorAll('.text-sub');
+
+            // get distance between about tab and work tab
+            let aboutTab = document.querySelector('.about');
+            let aboutTabLeft = aboutTab.offsetLeft;
+            let workTab = document.querySelector('.work');
+            let workTabLeft = workTab.offsetLeft;
+            let distance = aboutTabLeft - workTabLeft + 1.25 * 16;
+
+            // edit text-sub class
+            textSub.forEach(el => {
+                el.style.marginLeft = "0px";
+                el.style.marginRight = "0px";
+                el.style.paddingLeft = distance + "px";
+            })
+
+            // text-header class
+            let textHeader = document.querySelectorAll('.text-header');
+            textHeader.forEach(el => {
+                el.style.marginLeft = "0px";
+                el.style.marginRight = "0px";
+                el.style.paddingLeft = distance + "px";
+            })
+
+            // edit text-subdate
+            let textSubdate = document.querySelectorAll('.text-subdate');
+            textSubdate.forEach(el => {
+                el.style.marginLeft = "0px";
+                el.style.marginRight = "0px";
+                el.style.paddingLeft = distance + "px";
+            })
+
+            // on scale of page make the middle axis of main div be the middle axis of the screen
+            let main = document.querySelector('.main');
+            main.style.marginLeft = "5%";
+            main.style.marginTop = "35vh";
+
+            // change font size of text-sub class
+            // get current font size
+            textSub.forEach(el => {
+                el.style.fontSize =  "clamp(0.75rem, 4vw, 4rem)";
+            })
+
+            // change font size of text-header class
+            textHeader.forEach(el => {
+                el.style.fontSize = "clamp(1rem, 4.5vw, 4.5rem)";
+            })
+
+            // change font size of text-main class
+            let textMain = document.querySelectorAll('.text-main');
+            textMain.forEach(el => {
+                el.style.fontSize = "clamp(1.25rem, 5vw, 5rem)";
+            })
+
+            // reduce size of text-main vertical margins
+            textMain.forEach(el => {
+                el.style.marginBottom = "28vh";
+            })
+        }
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.boundingClientRect.y < 0) {
+                    entry.target.classList.remove('hidden');
+                } else {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                    else {
+                        entry.target.classList.remove('visible');
+                    }
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+
+        hiddenElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+
+    setTimeout(() => {
+        let miniMap = document.querySelector('.mini-map');
+        miniMap.classList.remove('visible');
+        miniMap.classList.remove('hidden');
+    
+        let miniMapSelection = document.querySelector('.mini-map-selection');
+        miniMapSelection.classList.remove('visible');
+        miniMapSelection.classList.remove('hidden');
+    }, 1000);
+
+</script>
+</html>

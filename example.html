@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div id="cards">
+        <div class="card">
+            <div class="card-content"></div>
+        </div>
+        <div class="card">
+            <div class="card-content"></div>
+        </div>
+        <div class="card">
+            <div class="card-content"></div>
+        </div>
+        <div class="card">
+            <div class="card-content"></div>
+        </div>
+        <div class="card">
+            <div class="card-content"></div>
+        </div>
+        <div class="card">
+            <div class="card-content"></div>
+        </div>
+    </div>
+</body>
+<style>
+    :root {
+        --card-color: rgb(6, 18, 22);
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #040e13;
+        margin: 0px;
+        overflow: scroll;
+        padding: 0px;
+    }
+
+    #cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        max-width: calc((375px + 8px) * 3);
+        width: calc((375px + 8px) * 3);
+    }
+
+    #cards:hover > .card::after {
+        opacity: 1;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.01);
+        border-radius: 12px;
+        cursor: pointer;
+        display: flex;
+        height: 325px;
+        flex-direction: column;
+        position: relative;
+        width: 375px;  
+    }
+
+    .card:hover::before {
+        opacity: 1;
+    }
+
+    .card::before,
+    .card::after {
+        border-radius: inherit;
+        content: "";
+        height: 100%;
+        left: 0px;
+        opacity: 0;
+        position: absolute;
+        top: 0px;
+        transition: opacity 500ms;
+        width: 100%;
+    }
+
+    .card::before {
+        background: radial-gradient(
+            800px circle at var(--mouse-x) var(--mouse-y), 
+            rgba(255, 255, 255, 0.02),
+            transparent 40%
+        );
+        z-index: 3;
+    }
+
+    .card::after {  
+        background: radial-gradient(
+            600px circle at var(--mouse-x) var(--mouse-y), 
+            rgba(255, 255, 255, 0.16),
+            transparent 40%
+        );
+        z-index: 1;
+    }
+
+    .card > .card-content {
+        background-color: var(--card-color);
+        border-radius: inherit;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        inset: 1px;
+        padding: 10px;
+        position: absolute;
+        z-index: 2;
+    }
+
+    @media(min-width: 1160px) {
+        body {
+            height: 100vh;
+        }
+    }
+
+    @media(max-width: 1160px) {
+        .card {
+            width: calc(50% - 24px);
+        }
+        body {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media(max-width: 750px) {
+        .card {
+            width: calc(100% - 32px);
+        }
+        #cards {
+            gap: 16px;
+        }
+        body {
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+    }
+</style>
+<script>
+    document.getElementById("cards").onmousemove = e => {
+    for(const card of document.getElementsByClassName("card")) {
+        const rect = card.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+    };
+    }
+</script>
+</html>
