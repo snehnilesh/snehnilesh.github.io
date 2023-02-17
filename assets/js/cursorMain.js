@@ -9,6 +9,12 @@ let cursor = document.querySelector('.cursor')
 let mouseX;
 let mouseY;
 
+let isMobile = navigator.appVersion.includes('iPhone') || navigator.appVersion.includes('Android');
+
+if (isMobile) {
+    cursor.style.display = "none";
+}
+
 window.addEventListener('mousemove', e => {
     mouseX = e.clientX;
     mouseY = e.clientY;

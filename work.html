@@ -651,12 +651,6 @@
         });
     });
 
-    let isMobile = navigator.appVersion.includes('iPhone') || navigator.appVersion.includes('Android');
-
-    if (isMobile) {
-        cursor.style.display = "none";
-    }
-
     function openCard(card) {
         // get the card title
         const title = card.querySelector(".card-title").innerHTML;

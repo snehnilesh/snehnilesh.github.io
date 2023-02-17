@@ -127,7 +127,7 @@
         background-color: rgb(16, 16, 16);
         scroll-behavior: smooth;
         overscroll-behavior: none;
-        cursor: none !important;
+        cursor: none;
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
         -webkit-user-select: none; /* Safari */        
@@ -214,7 +214,7 @@
     .menu-item {
         opacity: 0.8;
         font-weight: 425;
-        cursor: none !important;
+        cursor: none;
     }
     .bottom {
         margin-bottom: 50%;
@@ -313,7 +313,7 @@
         text-decoration: none;
         color: white;
         pointer-events: all;
-        cursor: none !important;
+        cursor: none;
     }
     .hidden {
         opacity: 0;
@@ -454,12 +454,6 @@
             window.scrollTo(0, 0);
         }
     });
-
-    let isMobile = navigator.appVersion.includes('iPhone') || navigator.appVersion.includes('Android');
-    
-    if(isMobile) {
-        cursor.style.display = "none";
-    }
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
