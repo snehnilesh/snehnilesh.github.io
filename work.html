@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -123,16 +124,19 @@
         scale: 0.8;
         margin-top: -0.8rem;
     }
+
     .menu-items {
         display: flex;
         justify-content: center;
         align-items: center;
     }
+
     .menu-item-on {
         padding-riqht: 2.5rem;
         overflow: hidden;
         line-height: 117%;
     }
+
     .menu-item {
         padding-left: 2.5rem;
         overflow: hidden;
@@ -173,11 +177,13 @@
         /* font-size: 18px; */
         font-size: clamp(1rem, 1.1vw, 1.2rem);
     }
+
     .menu div {
         margin-right: 22px;
         margin-left: 22px;
         white-space: nowrap;
     }
+
     .menu-item {
         opacity: 0.3;
         font-weight: 300;
@@ -290,15 +296,18 @@
             min-height: 62.5vh;
         }
     }
+
     @media(max-width: 625px) {
         .card {
             min-width: 80vw;
             min-height: 62.5vh;
         }
+
         #cards {
             gap: 24px;
         }
     }
+
     .footer {
         display: flex;
         position: fixed;
@@ -312,6 +321,7 @@
         scale: 0.8;
         margin-bottom: -0.8rem;
     }
+
     .footer-contents {
         display: flex;
         justify-content: center;
@@ -363,6 +373,7 @@
         opacity: 0.8;
         display: flex;
     }
+
     .card-image {
         width: 40px;
         height: 40px;
@@ -374,6 +385,7 @@
         border-style: solid;
         border-color: rgba(255, 255, 255, 0.1);
     }
+
     .card-top {
         margin: 3rem;
         margin-left: 2rem;
@@ -383,18 +395,22 @@
         align-items: flex-start;
         align-self: center;
     }
+
     .card-preview-image {
         height: 100%;
         object-fit: scale-down;
     }
+
     @media(max-height: 500px) {
         .card-preview-image {
             display: none;
         }
+
         .card {
             background: none;
             box-shadow: none;
         }
+
         .card-content {
             /* center vertically */
             display: flex;
@@ -402,6 +418,7 @@
             justify-content: center;
             align-items: center;
         }
+
         .card::before,
         .card::after {
             opacity: 0;
@@ -500,6 +517,7 @@
             align-items: flex-start;
             align-self: center;
         }
+
         .card-preview-image {
             height: 100%;
             object-fit: scale-down;
@@ -633,6 +651,7 @@
             cursor.style.opacity = 0;
         }, 1000);
     });
+
     // add scroll-snap-type: x mandatory; to #cards after 1 second
     setTimeout(() => {
         cards.style.scrollSnapType = "x mandatory";
