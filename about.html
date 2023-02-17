@@ -5,18 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <link rel="preload" href="work.html" as="document">
 </head>
 <body>
     <div class="cursor"></div>
 
     <div class="menu">
-        <a href="/work" class="menu-item work">Work</a>
+        <a onclick="location.href='/work.html'" class="menu-item work">Work</a>
         <p class="menu-item-on about">About</p>
     </div>
-    
+
     <div class="main">
         <div class="full-height hidden">
             <div class="text-main">
@@ -186,7 +184,7 @@
             
             <div class="text-sub inset hidden spacer-top-large">
                 <div class="text-sub inset hidden">
-                    <a href="mailto: snehnilesh123@hotmail.com">Email</a>
+                    <a onclick="location.href='mailto: snehnilesh123@hotmail.com'">Email</a>
                 </div>
                 <div class="text-sub inset hidden">
                     <a href="">GitHub</a>
@@ -207,6 +205,7 @@
     <div class="mini-map hidden"></div>
     <div class="mini-map-selection hidden"></div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 <style>
     @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
     :root {
@@ -310,19 +309,6 @@
                     width 0.2s,
                     height 0.2s
     }
-    .slide-up {
-        animation: slideUp ease-in-out 0.8s;
-    }
-    @keyframes slideUp {
-        0% {transform: translateY(24px);opacity: 0;}
-    }
-    .slide-down {
-        animation: slideDown ease-in-out 0.8s;
-    }
-    @keyframes slideDown {
-        0% {transform: translateY(8px);opacity: 0;}
-        100% {transform: translateY(0);opacity: 1;}
-    }
     .mini-map {
         position: fixed;
         padding-top: 30%;
@@ -417,8 +403,8 @@
         opacity: 0.6;
         transform: translateY(8px);
         transform: translateY(0px);
-/*         transition: opacity ease 1s; */
-/*                     transform ease 1s; */
+        transition: opacity ease 1s;
+                    /* transform ease 1s; */
     }
 
     .hidden:nth-child(1), .visible:nth-child(1) {
@@ -483,12 +469,75 @@
             background: black;
         }
     }
+    @keyframes rotate {
+        from {
+            rotate: 0deg;
+        }
+        50% {
+            scale: 1 1.5;
+        }
+        to {
+            rotate: 360deg;
+        }
+    }
 </style>
 <script>
-    // print preferred color scheme
-    console.log("prefers-color-scheme: " + window.matchMedia("(prefers-color-scheme: light)").matches);
-    
     window.onload = function() {
+        let isMobile = navigator.appVersion.includes('iPhone') || navigator.appVersion.includes('Android');
+        
+        var blur = document.createElement("div");
+        blur.style.display = "block";
+        blur.style.position = "fixed";
+        blur.style.top = "0";
+        blur.style.left = "0";
+        blur.style.width = "100%";
+        blur.style.height = "100%";
+        blur.style.zIndex = "-1";
+        // blur.style.backgroundColor = "rgba(255, 165, 0, 0.5)";
+        blur.style.backdropFilter = "blur(150px)";
+        blur.style.webkitBackdropFilter = "blur(150px)";
+        blur.style.willChange = "backdrop-filter";
+        blur.style.transition = "backdrop-filter 0.5s ease-in-out";
+        document.body.appendChild(blur);
+
+        // blue blurred ball behind blur following the mouse
+        var ball = document.createElement("div");
+        ball.classList.add("ball");
+        ball.style.display = "block";
+        ball.style.position = "fixed";
+        if (!isMobile) {
+            ball.style.top = "40%";
+            ball.style.left = "50%";
+        } else {
+            ball.style.left = "0";
+        }
+        ball.style.width = "500px";
+        ball.style.height = "500px";
+        ball.style.borderRadius = "50%";
+        ball.style.zIndex = "-999";
+        ball.style.background = "linear-gradient(to right, aquamarine, purple)";
+        ball.style.transform = "scale(1.5, 1)";
+        ball.style.animation = "rotate 10s ease infinite";
+        ball.style.marginLeft = "-250px";
+        ball.style.marginTop = "-250px";
+        ball.style.opacity = "0.5";
+
+        document.body.appendChild(ball);
+        
+        document.body.onpointermove = function(e) {
+            if (!isMobile) {
+                const { clientX, clientY } = e;
+
+                ball.animate ({
+                    left: `${clientX}px`,
+                    top: `${clientY}px`
+                }, {
+                    duration: 1000,
+                    fill: 'forwards',
+                });
+            }
+        }
+        
         window.scrollTo(0, 0);
         document.addEventListener('contextmenu', 
             event => event.preventDefault()
@@ -498,19 +547,24 @@
         const miniMap = document.querySelector('.mini-map');
         
         document.addEventListener("keydown", function (event){
-            if (event.ctrlKey){
+            //  prevent U key
+            if(event.keyCode == 85){
                 event.preventDefault();
             }
-            if (event.shiftKey){
+            //  prevent I key
+            if(event.keyCode == 73){
                 event.preventDefault();
             }
-            if (event.altKey){
+            //  prevent s key
+            if(event.keyCode == 83){
                 event.preventDefault();
             }
+            //  prevent F12 key
             if(event.keyCode == 123){
                 event.preventDefault();
             }
-            if(event.keyCode == 83){
+            //  prevent F5 key
+            if(event.keyCode == 116){
                 event.preventDefault();
             }
             // on arrow keys up and down scroll page 2x faster
@@ -528,7 +582,6 @@
             }
         });
 
-        let isMobile = navigator.appVersion.includes('iPhone') || navigator.appVersion.includes('Android');
         document.body.style.opacity = 1;
 
         gsap.set('.cursor',{xPercent: -50, yPercent: -50})
@@ -561,14 +614,14 @@
         })
 
         document.querySelectorAll('.mini-map-selection').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            gsap.to(cursor, 0.25, {scale: 1.5})
-        })
-        card.addEventListener('mouseleave', () => {
-            gsap.to(cursor, 0.25, {scale: 1})
+            card.addEventListener('mouseenter', () => {
+                gsap.to(cursor, 0.25, {scale: 1.5})
+            })
+            card.addEventListener('mouseleave', () => {
+                gsap.to(cursor, 0.25, {scale: 1})
 
+            })
         })
-    })
 
         // Inactive Cursor Opacity
         let timeout;
@@ -629,6 +682,11 @@
                 miniMap.querySelectorAll('.hidden').forEach(e => e.classList.remove('hidden'));
                 // replace class inset with style margin-left: 2rem
                 miniMap.querySelectorAll('.inset').forEach(e => e.style.marginLeft = "5rem");
+                // remove head
+                // miniMap.querySelector('head').innerHTML = '';
+                // remove js and css
+                miniMap.querySelectorAll('script').forEach(e => e.remove());
+                miniMap.querySelectorAll('style').forEach(e => e.remove());
             });
 
             miniMap.style.scale = "0.25";
@@ -637,12 +695,9 @@
             // scroll mini-map in opposite direction of scroll
             window.addEventListener('scroll', () => {
                 let scroll = window.scrollY;
+                // miniMap.style.marginTop = `-${scroll/2}px`;
+                miniMap.style.transition = 'unset'
                 miniMap.style.transform = `translateY(-${scroll/2}px)`;
-            })
-
-            // scroll mini map selection to match scroll
-            window.addEventListener('scroll', () => {
-                let scroll = window.scrollY;
                 miniMapSelection.style.transform = `translateY(${scroll/2}px)`;
             })
 
@@ -789,16 +844,8 @@
             observer.observe(element);
         });
     }
-
-    setTimeout(() => {
-        let miniMap = document.querySelector('.mini-map');
-        miniMap.classList.remove('visible');
-        miniMap.classList.remove('hidden');
-    
-        let miniMapSelection = document.querySelector('.mini-map-selection');
-        miniMapSelection.classList.remove('visible');
-        miniMapSelection.classList.remove('hidden');
-    }, 1000);
-
 </script>
 </html>
+
+<!-- font -->
+<!-- drag to scroll -->

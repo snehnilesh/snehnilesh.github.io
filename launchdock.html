@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaunchDock</title>
+</head>
+<body>
+    <div class="cursor"></div>
+
+    <div class="progress"></div>
+
+    <div class="menu hidden">
+        <p onclick="location.href='/work.html'" class="menu-item back">Back</p>
+    </div>
+
+    <div class="main hidden">
+            <div class="top-images">
+                <img src="/assets/images/app-previews/launchdock/launchdock-1.png" alt="LaunchDock">
+                <img src="/assets/images/app-previews/launchdock/launchdock-2.png" alt="LaunchDock">
+                <img src="/assets/images/app-previews/launchdock/launchdock-3.png" alt="LaunchDock">
+            </div>
+            <!-- <div class="text-title">
+                LaunchDock
+            </div> -->
+    </div>
+
+    <div class="main hidden">
+        <div class="text-title">
+            LaunchDock
+        </div>
+    </div>
+
+    <div class="main hidden">
+        <div class="text-title">
+            LaunchDock
+        </div>
+    </div>
+
+    <div class="main hidden">
+        <div class="text-title">
+            LaunchDock
+        </div>
+    </div>
+
+    <div class="main hidden">
+        <div class="text-title">
+            LaunchDock
+        </div>
+    </div>
+
+    <div class="main hidden">
+        <div class="text-title">
+            LaunchDock
+        </div>
+    </div>
+
+    <div class="main hidden">
+        <div class="text-title">
+            LaunchDock
+        </div>
+    </div>
+
+    <div class="main hidden">
+        <div class="text-title">
+            LaunchDock
+        </div>
+    </div>
+
+    <div class="main hidden">
+        <div class="text-title">
+            LaunchDock
+        </div>
+    </div>
+
+    <div class="main hidden">
+        <div class="text-title">
+            LaunchDock
+        </div>
+    </div>
+
+    <div class="main hidden">
+        <div class="text-title">
+            LaunchDock
+        </div>
+    </div>
+
+    <div class="main hidden">
+        <div class="text-title">
+            LaunchDock
+        </div>
+    </div>
+
+    <div class="main hidden">
+        <div class="text-title">
+            LaunchDock
+        </div>
+    </div>
+
+    <div class="main hidden">
+        <div class="text-title">
+            LaunchDock
+        </div>
+    </div>
+
+    <div class="main hidden">
+        <div class="text-title">
+            LaunchDock
+        </div>
+    </div>
+
+</body>
+<style>
+    @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+    :root {
+        --select-menu-item: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    body {
+        white-space: nowrap;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        font-family: 'SF Pro Display', sans-serif;
+        background-color: rgb(16, 16, 16);
+        scroll-behavior: smooth;
+        overscroll-behavior: none;
+        cursor: none !important;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+    }
+    *::-webkit-scrollbar {
+        display: none;
+    }
+    .spacer-top {
+        margin-top: 1.5rem;
+    }
+    .spacer-top-large {
+        margin-top: 5rem;
+    }
+    .top-images {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+   .top-images img {
+        height: 600px;
+        object-fit: contain;
+        margin: 1rem;
+    }
+    .top-images img:nth-child(2) {
+        margin-top: 164px;
+    }
+    .top-images img:nth-child(1) {
+        margin-top: 80px;
+    }
+    .top-images img:nth-child(3) {
+        margin-top: 80px;
+    }
+    .menu {
+        position: fixed;
+        justify-content: left;
+        pointer-events: none;
+        z-index: 9995;
+        scale: 0.8;
+        margin-top: -0.8rem;
+        margin-left: 2rem;
+    }
+    .menu-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu-item-on {
+        padding-left: 1.25rem;
+        overflow: hidden;
+        line-height: 117%;
+    }
+    .menu-item {
+        padding-right: 1.25rem;
+        overflow: hidden;
+        line-height: 117%;
+    }
+    .menu-item, .menu-item-on {
+        color: white;
+        font-size: clamp(1.2rem, 1.3vw, 1.4rem);
+        text-decoration: none;
+        pointer-events: none; transform: translate3d(0%, 0%, 0px);
+        will-change: transform;
+        transform: translate3d(0, 110%, 0);
+        pointer-events: all;
+        transition: opacity 300ms var(--select-menu-item);
+    }
+    .menu-item-on, .menu-item:hover {
+        opacity: 0.4;
+        font-weight: 425;
+    }
+    .menu div {
+        margin-right: 22px;
+        margin-left: 22px;
+        white-space: nowrap;
+    }
+    .menu-item {
+        opacity: 0.8;
+        font-weight: 425;
+        cursor: none !important;
+    }
+    .bottom {
+        margin-bottom: 50%;
+    }
+    .cursor {
+        position: fixed;
+        left: 0;
+        pointer-events: none;
+        border-radius: 50%;
+        transition: transform 0s;
+        background: white;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.5s,
+                    border-radius 0.2s,
+                    width 0.2s,
+                    height 0.2s
+    }
+    .mini-map {
+        position: fixed;
+        padding-top: 30%;
+        left: calc(40px + 3vw);
+        width: 15%;
+        will-change: transform;
+    }
+    .mini-map-selection {
+        position: fixed;
+        display: flex;
+        margin-top: 7.5vw;
+        left: 47.5px;
+        width: 15vw;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.015);
+        border-style: solid;
+        opacity: 0.6;
+        will-change: opacity;
+        z-index: 9999;
+        border-radius: 8px;
+        scale: 0.25;
+        transform-origin: top left;
+    }
+    .main {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        display: flex;
+        pointer-events: none;
+        overflow: scroll;
+        line-height: 1.5;
+        height: 100vh;
+        justify-content: center;
+    }
+    .text-title {
+        font-size: clamp(3.5rem, 4vw, 5rem);
+        color: white;
+        font-weight: 500;
+        text-align: center;
+        margin-top: 6rem;
+    }
+    .text-main {
+        font-size: clamp(1rem, 2.75vw, 3.5rem);
+        color: white;
+        font-weight: 300;
+        text-align: left;
+        transition: all;
+    }
+    .text-header {
+        font-size: clamp(0.875rem, 2vw, 2.625rem);
+        color: white;
+        font-weight: 225;
+        text-align: left;
+        width: 80%;
+    }
+    .text-sub {
+        font-size: clamp(0.75rem, 1.25vw, 1.75rem);
+        color: white;
+        opacity: 0.4 !important;
+        font-weight: 150;
+        text-align: left;
+        width: 80%;
+    }
+    .text-subdate {
+        font-size: clamp(0.8rem, 1.5vw, 1.8rem);
+        color: white;
+        opacity: 0.6 !important;
+        font-weight: 150;
+        text-align: left;
+        width: 80%
+    }
+    .inset {
+        margin-left: 0;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        pointer-events: all;
+        cursor: none !important;
+    }
+    .hidden {
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity ease 1s,
+                    transform ease 1s;
+
+    }
+    .visible {
+        opacity: 1;
+        transform: translateY(0px);
+        transition: opacity ease 1s,
+                    transform ease 1s;
+    }
+    .visible-60 {
+        opacity: 0.6;
+        transform: translateY(8px);
+        transform: translateY(0px);
+        transition: opacity ease 1s;
+                    /* transform ease 1s; */
+    }
+
+    .hidden:nth-child(1), .visible:nth-child(1) {
+        transition-delay: 0s;
+    }
+    .hidden:nth-child(2), .visible:nth-child(2) {
+        transition-delay: 0.075s;
+    }
+    .hidden:nth-child(3), .visible:nth-child(3) {
+        transition-delay: 0.15s;
+    }
+    .hidden:nth-child(4), .visible:nth-child(4) {
+        transition-delay: 0.225s;
+    }
+    .hidden:nth-child(5), .visible:nth-child(5) {
+        transition-delay: 0.3s;
+    }
+    .progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 2px;
+        background-color: white;
+        z-index: 9999;
+    }
+    @keyframes fadeUp {
+        0% {transform: translateY(64px);opacity: 0;}
+    }
+    @media(prefers-reduced-motion: reduce) {
+        .hidden {
+            transition: none;
+        }
+    }
+    @media (prefers-color-scheme: light) {
+        /* text */
+        .text-title {
+            color: black;
+        }
+        .text-main {
+            color: black;
+        }
+        .text-header {
+            color: black;
+        }
+        .text-sub {
+            color: black;
+        }
+        .text-subdate {
+            color: black;
+        }
+        a {
+            color: black;
+        }
+        .menu-item {
+            color: black;
+        }
+        .menu-item-on {
+            color: black;
+        }
+        /* background */
+        html {
+            background-color: white;
+        }
+        .mini-map-selection {
+            background-color: rgba(0, 0, 0, 0.025);
+        }
+        /* border */
+        .mini-map-selection {
+            border: 1px solid rgba(0, 0, 0, 0.4);
+        }
+        .cursor {
+            background: black;
+        }
+        .progress {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script>
+    window.onload = function() {
+        window.scrollTo(0, 0);
+        document.addEventListener('contextmenu', 
+            event => event.preventDefault()
+        );
+
+        document.addEventListener("keydown", function (event){
+            //  prevent U key
+            if(event.keyCode == 85){
+                event.preventDefault();
+            }
+            //  prevent I key
+            if(event.keyCode == 73){
+                event.preventDefault();
+            }
+            //  prevent s key
+            if(event.keyCode == 83){
+                event.preventDefault();
+            }
+            //  prevent F12 key
+            if(event.keyCode == 123){
+                event.preventDefault();
+            }
+            //  prevent F5 key
+            if(event.keyCode == 116){
+                event.preventDefault();
+            }
+            // on arrow keys up and down scroll page 2x faster
+            if (event.keyCode == 38 || event.keyCode == 40) {
+                event.preventDefault();
+                // get current scroll position
+                var scrollPosition = window.pageYOffset;
+                // height of page
+                var windowHeight = document.documentElement.clientHeight;
+                // scroll to new position
+                window.scrollTo({
+                    top: scrollPosition + (event.keyCode == 38 ? -1 : 1) * windowHeight / 4,
+                    behavior: 'smooth'
+                });
+            }
+        });
+
+        document.body.style.opacity = 1;
+
+        gsap.set('.cursor',{xPercent: -50, yPercent: -50})
+
+        let cursor = document.querySelector('.cursor')
+
+        let mouseX;
+        let mouseY;
+
+        window.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            gsap.to(cursor, 0.25, {x: mouseX, y:mouseY})
+        })
+
+        document.querySelectorAll('a,p').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                gsap.to(cursor, 0.25, {scale: 1.5})
+                cursor.style.borderRadius = "16px";
+                cursor.style.width = "60px";
+                cursor.style.height = "24px";
+            })
+            link.addEventListener('mouseleave', () => {
+                gsap.to(cursor, 0.25, {scale: 1})
+                cursor.style.borderRadius = "999px";
+                cursor.style.width = "20px";
+                cursor.style.height = "20px";
+            })
+        })
+
+    // Inactive Cursor Opacity
+    let timeout;
+    document.addEventListener('mousemove', () => {
+        clearTimeout(timeout);
+        cursor.style.opacity = 0.1;
+        timeout = setTimeout(() => {
+            cursor.style.opacity = 0;
+        }, 1000);
+    });
+
+    // Scroll To Top
+    document.addEventListener('click', e => {
+        let x = e.clientX;
+        let y = e.clientY;
+    })
+
+    let menuHeight = document.querySelector('.menu').offsetHeight;
+    document.addEventListener('click', e => {
+        let x = e.clientX;
+        let y = e.clientY;
+        if (y < menuHeight) {
+            window.scrollTo(0, 0);
+        }
+    });
+
+    let isMobile = navigator.appVersion.includes('iPhone') || navigator.appVersion.includes('Android');
+    
+    if(isMobile) {
+        cursor.style.display = "none";
+    }
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.boundingClientRect.y < 0) {
+                    entry.target.classList.remove('hidden');
+                } else {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+
+        hiddenElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+
+    //  line on left side of screen signifying current position on page
+    window.addEventListener('scroll', function() {
+        var scroll = window.pageYOffset;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var vh = window.innerHeight;
+        //  get how much scrolled in percentage
+        var scrolled = (scroll / height) * 100;
+        // if scrolled less than 100vh, set height to 100vh
+        document.getElementsByClassName('progress')[0].style.height = scrolled + '%';
+    });
+
+    const text = document.querySelector('.text-main');
+    gsap.to(text, {y: 0, delay: 0.2, duration: 0.5, ease: 'power2.out'});
+</script>
+</html>

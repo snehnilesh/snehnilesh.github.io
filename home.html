@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Home</title>
+
+    <!-- preload files from app icons -->
+    <link rel="preload" href="/App Icons/LaunchDock.png" as="image">
+    <link rel="preload" href="/App Icons/MathToolkit.png" as="image">
+    <link rel="preload" href="/App Icons/SFToolkit.png" as="image">
+    <link rel="preload" href="/App Icons/SubsTrackDark.png" as="image">
+    <link rel="preload" href="/App Icons/SubsTrackLight.png" as="image">
+
+    <!-- preload files from work.html -->
+    <link rel="preload" href="/App Previews/LaunchDock.png" as="image">
+    <link rel="preload" href="/App Previews/MathToolkit.png" as="image">
+    <link rel="preload" href="/App Previews/SFToolkit.png" as="image">
+    <link rel="preload" href="/App Previews/SubsTrack.png" as="image">
+
+    <link rel="preload" href="work.html" as="document">
+    <link rel="preload" href="about.html" as="document">
+</head>
+
+<body>
+    <div class="cursor"></div>
+
+    <div class="menu">
+        <a onclick="location.href='/work.html'" class="menu-item">Work</a>
+        <a onclick="location.href='/about.html'" class="menu-item">About</a>
+    </div>
+
+    <div class="page-title slide-up">Sneh Nilesh</div>
+
+</body>
+<style>
+    @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+    :root {
+        --select-menu-item: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'SF Pro Display', sans-serif;
+        /* background-color: #040e13; */
+        background-color: rgb(16, 16, 16);
+        /* background-color: black; */
+    }
+
+    html {
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+        overflow: hidden;
+        cursor: none;
+        -webkit-user-select: none;
+        /* Safari */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* IE10+/Edge */
+        user-select: none;
+        /* Standard */
+    }
+
+    .page-title {
+        width: 100vw;
+        text-align: center;
+        flex-wrap: nowrap;
+        font-size: clamp(3.5rem, 4vw, 4.5rem);
+        color: white;
+        font-weight: 550;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        /* center on page */
+        position: absolute;
+        top: calc(50% - 4rem);
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        z-index: 9995;
+        scale: 0.8;
+        margin-top: -0.8rem;
+    }
+
+    .menu-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10rem;
+    }
+
+    .menu-item {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        overflow: hidden;
+        line-height: 117%;
+        padding-top: 0.75rem;
+    }
+
+    .menu-item,
+    .menu-item-on {
+        color: white;
+        font-size: clamp(1.2rem, 1.3vw, 1.4rem);
+        text-decoration: none;
+        pointer-events: none;
+        transform: translate3d(0%, 0%, 0px);
+        will-change: transform;
+        transform: translate3d(0, 110%, 0);
+        pointer-events: all;
+        transition: opacity 300ms var(--select-menu-item);
+    }
+
+    .menu-item-on,
+    .menu-item:hover {
+        opacity: 0.8;
+        font-weight: 425;
+    }
+
+    .menu div {
+        margin-right: 22px;
+        margin-left: 22px;
+        white-space: nowrap;
+    }
+
+    .menu-item {
+        opacity: 0.3;
+        font-weight: 300;
+        cursor: none;
+    }
+
+    :root {
+        --card-color: rgb(16, 16, 16);
+    }
+
+    .cursor {
+        position: fixed;
+        left: 0;
+        pointer-events: none;
+        border-radius: 50%;
+        transition: transform 0s;
+        background: white;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.5s,
+            border-radius 0.2s,
+            width 0.2s,
+            height 0.2s
+    }
+
+    .slide-up {
+        animation: slideUp ease-in-out 0.8s;
+    }
+
+    @keyframes slideUp {
+        0% {
+            transform: translateY(8px);
+            opacity: 0;
+        }
+    }
+
+    .slide-down {
+        animation: slideDown ease-in-out 0.8s;
+    }
+
+    @keyframes slideDown {
+        0% {
+            transform: translateY(-8px);
+            opacity: 0;
+        }
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script>
+    window.onload = function () {
+
+        window.scrollTo(0, 0);
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+
+        document.addEventListener("keydown", function (event) {
+            //  prevent U key
+            if (event.keyCode == 85) {
+                event.preventDefault();
+            }
+            //  prevent I key
+            if (event.keyCode == 73) {
+                event.preventDefault();
+            }
+            //  prevent s key
+            if (event.keyCode == 83) {
+                event.preventDefault();
+            }
+            //  prevent F12 key
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+            //  prevent F5 key
+            if (event.keyCode == 116) {
+                event.preventDefault();
+            }
+            // on arrow keys up and down scroll page 2x faster
+            if (event.keyCode == 38 || event.keyCode == 40) {
+                event.preventDefault();
+                // get current scroll position
+                var scrollPosition = window.pageYOffset;
+                // height of page
+                var windowHeight = document.documentElement.clientHeight;
+                // scroll to new position
+                window.scrollTo({
+                    top: scrollPosition + (event.keyCode == 38 ? -1 : 1) * windowHeight / 4,
+                    behavior: 'smooth'
+                });
+            }
+        });
+
+        document.body.style.opacity = 1;
+
+        gsap.set('.cursor', { xPercent: -50, yPercent: -50 })
+
+        let cursor = document.querySelector('.cursor')
+
+        let mouseX;
+        let mouseY;
+
+        window.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            gsap.to(cursor, 0.25, { x: mouseX, y: mouseY })
+        })
+
+        document.querySelectorAll('a,p').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                gsap.to(cursor, 0.25, { scale: 1.5 })
+                cursor.style.borderRadius = "16px";
+                cursor.style.width = "60px";
+                cursor.style.height = "24px";
+            })
+            link.addEventListener('mouseleave', () => {
+                gsap.to(cursor, 0.25, { scale: 1 })
+                cursor.style.borderRadius = "999px";
+                cursor.style.width = "20px";
+                cursor.style.height = "20px";
+            })
+        })
+
+        // Inactive Cursor Opacity
+        let timeout;
+        document.addEventListener('mousemove', () => {
+            clearTimeout(timeout);
+            cursor.style.opacity = 0.1;
+            timeout = setTimeout(() => {
+                cursor.style.opacity = 0;
+            }, 1000);
+        });
+
+        // Scroll To Top
+        document.addEventListener('click', e => {
+            let x = e.clientX;
+            let y = e.clientY;
+        })
+
+        let menuHeight = document.querySelector('.menu').offsetHeight;
+        document.addEventListener('click', e => {
+            let x = e.clientX;
+            let y = e.clientY;
+            if (y < menuHeight) {
+                window.scrollTo(0, 0);
+            }
+        });
+
+        let isMobile = navigator.appVersion.includes('iPhone') || navigator.appVersion.includes('Android');
+
+        if (isMobile) {
+            cursor.style.display = "none";
+        }
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.boundingClientRect.y < 0) {
+                    entry.target.classList.remove('hidden');
+                } else {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+
+        hiddenElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+</script>
+
+</html>
