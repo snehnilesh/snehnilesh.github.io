@@ -476,12 +476,12 @@
         });
     }
 
-    //  line on left side of screen signifying current position on page
+    // line on left side of screen signifying current position on page
     window.addEventListener('scroll', function() {
         var scroll = window.pageYOffset;
         var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         var vh = window.innerHeight;
-        //  get how much scrolled in percentage
+        // get how much scrolled in percentage
         var scrolled = (scroll / height) * 100;
         // if scrolled less than 100vh, set height to 100vh
         document.getElementsByClassName('progress')[0].style.height = scrolled + '%';

@@ -191,7 +191,8 @@
     }
 
     :root {
-        --card-color: rgb(20, 20, 20);
+        /* --card-color: rgb(20, 20, 20); */
+        --card-color: rgba(20, 20, 20, 0.2);
     }
 
     #cards {
@@ -228,6 +229,8 @@
         margin-top: 4rem;
         margin-bottom: 4rem;
         box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.1);
+        transition: scale 0.25s cubic-bezier(0.0, 0.9, 0.9, 1.1);
+        backdrop-filter: blur(50px);
     }
 
     .first-card {
@@ -332,7 +335,7 @@
     }
 
     .card-on {
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.04);
     }
 
     .cursor {
@@ -477,27 +480,28 @@
 
         /* card */
         :root {
-            --card-color: white;
+            --card-color: rgba(241, 241, 241, 0.01);
         }
 
         .card {
-            background-color: white;
+            /* background-color: white; */
+            background-color: transparent;
         }
 
         .card::before {
             background: radial-gradient(1000px circle at var(--mouse-x) var(--mouse-y),
-                    rgba(0, 0, 0, 0.04),
+            rgba(228, 228, 228, 0.1),
                     transparent 40%);
         }
 
         .card::after {
             background: radial-gradient(1000px circle at var(--mouse-x) var(--mouse-y),
-                    rgba(0, 0, 0, 0.2),
+                    rgba(228, 228, 228, 0.1),
                     transparent 40%);
         }
 
         .card-on {
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(149, 149, 149, 0.03);
         }
 
         .card-title {
@@ -602,6 +606,7 @@
         }
 
         const card = cards.children[currentCard - 1];
+        console.log(currentCard - 1);
         card.classList.add("card-on");
     });
 
@@ -683,6 +688,7 @@
                 img.setAttribute("src", src);
                 observer.unobserve(card);
             }
+            console.log(entry);
         });
     }, options);
 

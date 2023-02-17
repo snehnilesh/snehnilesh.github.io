@@ -221,6 +221,7 @@
         background-color: rgb(16, 16, 16);
         scroll-behavior: smooth;
         overscroll-behavior: none;
+        cursor: none;
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
         -webkit-user-select: none; /* Safari */        
@@ -481,90 +482,11 @@
     }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-<script src="/assets/js/cursorBall.js"></script>
+<script src="/assets/js/cursorMain.js"></script>
 <script src="/assets/js/preventKeys.js"></script>
 <script>
     window.onload = function() {
         let isMobile = navigator.appVersion.includes('iPhone') || navigator.appVersion.includes('Android');
-        
-        var blur = document.createElement("div");
-        blur.style.display = "block";
-        blur.style.position = "fixed";
-        blur.style.top = "0";
-        blur.style.left = "0";
-        blur.style.width = "100%";
-        blur.style.height = "100%";
-        blur.style.zIndex = "-1";
-        // blur.style.backgroundColor = "rgba(255, 165, 0, 0.5)";
-        blur.style.backdropFilter = "blur(100px)";
-        blur.style.webkitBackdropFilter = "blur(100px)";
-        blur.style.willChange = "backdrop-filter";
-        blur.style.transition = "backdrop-filter 0.5s ease-in-out";
-        document.body.appendChild(blur);
-
-        // blue blurred ball behind blur following the mouse
-        var ball = document.createElement("div");
-        ball.classList.add("ball");
-        ball.style.display = "block";
-        ball.style.position = "fixed";
-        if (!isMobile) {
-            ball.style.top = "-50%";
-            ball.style.left = "50%";
-        } else {
-            ball.style.top = "0";
-            ball.style.left = "0";
-        }
-        ball.style.width = "500px";
-        ball.style.height = "500px";
-        ball.style.borderRadius = "50%";
-        ball.style.zIndex = "-999";
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            ball.style.background = "linear-gradient(to right, aquamarine, purple)";
-        } else {
-            ball.style.background = "linear-gradient(to right, aquamarine, violet)";
-        }
-        ball.style.transform = "scale(1.5, 1)";
-        ball.style.animation = "rotate 10s ease infinite";
-        ball.style.marginLeft = "-250px";
-        ball.style.marginTop = "-250px";
-        ball.style.opacity = "0.35";
-        ball.style.willChange = "transform opacity";
-        ball.style.transition = "opacity 0.5s ease-in-out";
-
-
-        // check change of css dark mode
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-            if (e.matches) {
-                ball.style.background = "linear-gradient(to right, aquamarine, purple)";
-            } else {
-                ball.style.background = "linear-gradient(to right, aquamarine, violet)";
-            }
-        });
-
-        document.body.appendChild(ball);
-        
-        document.body.onpointermove = function(e) {
-            if (!isMobile) {
-                const { clientX, clientY } = e;
-
-                ball.animate ({
-                    left: `${clientX}px`,
-                    top: `${clientY}px`
-                }, {
-                    duration: 0,
-                    fill: 'forwards',
-                });
-            }
-        }
-
-        document.querySelectorAll('a, p, .mini-map-selection').forEach(link => {
-            link.addEventListener('mouseover', () => {
-                ball.style.opacity = "0.25";
-            });
-            link.addEventListener('mouseout', () => {
-                ball.style.opacity = "0.35";
-            });
-        });
         
         window.scrollTo(0, 0);
         document.addEventListener('contextmenu', 
@@ -599,12 +521,12 @@
         // // reduce scale of .menu div when page is scrolled
         // let menu = document.querySelector('.menu');
         // window.addEventListener('scroll', () => {
-        //     let scroll = window.scrollY;
-        //     let scale = 1 - (scroll / 1000);
-        //     if (scale < 0.8) {
-        //         scale = 0.8;
-        //     }
-        //     menu.style.transform = `scale(${scale})`;
+        //    let scroll = window.scrollY;
+        //    let scale = 1 - (scroll / 1000);
+        //    if (scale < 0.8) {
+        //        scale = 0.8;
+        //    }
+        //    menu.style.transform = `scale(${scale})`;
         // })
 
         // Scroll To Top
