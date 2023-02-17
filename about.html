@@ -548,7 +548,7 @@
                     left: `${clientX}px`,
                     top: `${clientY}px`
                 }, {
-                    duration: 250,
+                    duration: 0,
                     fill: 'forwards',
                 });
             }
@@ -579,62 +579,8 @@
         });
 
         document.body.style.opacity = 1;
-
-        gsap.set('.cursor',{xPercent: -50, yPercent: -50})
-
-        let cursor = document.querySelector('.cursor')
-
-        let mouseX;
-        let mouseY;
-
-        window.addEventListener('mousemove', e => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-
-            gsap.to(cursor, 0.2, {x: mouseX, y:mouseY})
-        })
         
         let body = document.querySelector('body');
-
-        document.querySelectorAll('a,p').forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                gsap.to(cursor, 0.2, {scale: 1.5})
-                cursor.style.borderRadius = "16px";
-                cursor.style.width = "60px";
-                cursor.style.height = "24px";
-                cursor.style.opacity = 0.1;
-                body.style.cursor = "none";
-                ball.style.opacity = "0.25";
-            })
-            link.addEventListener('mouseleave', () => {
-                gsap.to(cursor, 0.2, {scale: 1})
-                cursor.style.borderRadius = "999px";
-                cursor.style.width = "20px";
-                cursor.style.height = "20px";
-                cursor.style.opacity = 0;
-                body.style.cursor = "default";
-                ball.style.opacity = "0.4";
-            })
-        })
-
-        document.querySelectorAll('.mini-map-selection').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                gsap.to(cursor, 0.2, {scale: 1.5})
-                cursor.style.opacity = 0.1;
-                body.style.cursor = "none";
-                ball.style.opacity = "0.25";
-            })
-            card.addEventListener('mouseleave', () => {
-                gsap.to(cursor, 0.2, {scale: 1})
-                cursor.style.opacity = 0;
-                body.style.cursor = "default";
-                ball.style.opacity = "0.4";
-            })
-        })
-
-        // Inactive Cursor Opacity
-        let timeout;
-        document.addEventListener('mousemove', () => {
             clearTimeout(timeout);
             // cursor.style.opacity = 0.1;
             timeout = setTimeout(() => {
