@@ -22,7 +22,7 @@ window.addEventListener('mousemove', e => {
     gsap.to(cursor, 0.01, {x: mouseX, y:mouseY})
 })
 
-document.querySelectorAll('a, p').forEach(link => {
+document.querySelectorAll('a, p, .footer').forEach(link => {
     link.addEventListener('mouseenter', () => {
         gsap.to(cursor, 0.1, {scale: 1.5})
         cursor.style.borderRadius = "16px";
@@ -109,10 +109,13 @@ ball.style.transform = "scale(1.5, 1)";
 ball.style.animation = "rotate 10s ease infinite";
 ball.style.marginLeft = "-250px";
 ball.style.marginTop = "-250px";
-ball.style.opacity = "0.35";
+if (!isMobile) {
+    ball.style.opacity = "0";
+} else {
+    ball.style.opacity = "0.35";
+}
 ball.style.willChange = "transform opacity";
 ball.style.transition = "opacity 0.5s ease-in-out";
-
 
 // check change of css dark mode
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
@@ -125,7 +128,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e =
 
 document.body.appendChild(ball);
 
-document.body.onpointermove = function(e) {
+document.onpointermove = function(e) {
     if (!isMobile) {
         const { clientX, clientY } = e;
 
@@ -136,10 +139,11 @@ document.body.onpointermove = function(e) {
             duration: 0,
             fill: 'forwards',
         });
+        ball.style.opacity = "0.35";
     }
 }
 
-document.querySelectorAll('a, p, .mini-map-selection, .card').forEach(link => {
+document.querySelectorAll('a, p, .mini-map-selection, .card, .footer').forEach(link => {
     link.addEventListener('mouseover', () => {
         ball.style.opacity = "0.25";
     });

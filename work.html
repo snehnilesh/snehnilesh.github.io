@@ -230,7 +230,6 @@
         margin-bottom: 4rem;
         box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.1);
         transition: scale 0.25s cubic-bezier(0.0, 0.9, 0.9, 1.1);
-        backdrop-filter: blur(50px);
     }
 
     .first-card {
@@ -606,7 +605,6 @@
         }
 
         const card = cards.children[currentCard - 1];
-        console.log(currentCard - 1);
         card.classList.add("card-on");
     });
 
@@ -671,30 +669,6 @@
         // redirect to the card's page
         window.location = cardPage;
     }
-
-    // load only the cards in the intersection observer
-    const options = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const card = entry.target;
-                const img = card.querySelector("img");
-                const src = img.getAttribute("src");
-                img.setAttribute("src", src);
-                observer.unobserve(card);
-            }
-            console.log(entry);
-        });
-    }, options);
-
-    document.querySelectorAll(".card").forEach(card => {
-        observer.observe(card);
-    });
 </script>
 
 </html>
