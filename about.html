@@ -182,21 +182,21 @@
         <div class="text-main bottom hidden">
             Contact
             
-            <div class="text-sub inset hidden spacer-top-large">
+            <div class="hidden spacer-top-large">
                 <div class="text-sub inset hidden">
                     <a onclick="location.href='mailto: snehnilesh123@hotmail.com'">Email</a>
                 </div>
                 <div class="text-sub inset hidden">
-                    <a href="">GitHub</a>
+                    <a onclick="location.href=''">GitHub</a>
                 </div>
                 <div class="text-sub inset hidden">
-                    <a href="">Instagram</a>
+                    <a onclick="location.href=''">Instagram</a>
                 </div>
                 <div class="text-sub inset hidden">
-                    <a href="">LinkedIn</a>
+                    <a onclick="location.href=''">LinkedIn</a>
                 </div>
                 <div class="text-sub inset hidden">
-                    <a href="">Twitter</a>
+                    <a onclick="location.href=''">Twitter</a>
                 </div>
             </div>
         </div>
@@ -478,6 +478,7 @@
     }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script src="/assets/js/preventKeys.js"></script>
 <script>
     window.onload = function() {
         let isMobile = navigator.appVersion.includes('iPhone') || navigator.appVersion.includes('Android');
@@ -513,14 +514,29 @@
         ball.style.height = "500px";
         ball.style.borderRadius = "50%";
         ball.style.zIndex = "-999";
-        ball.style.background = "linear-gradient(to right, aquamarine, purple)";
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            ball.style.background = "linear-gradient(to right, aquamarine, purple)";
+        } else {
+            ball.style.background = "linear-gradient(to right, aquamarine, violet)";
+        }
         ball.style.transform = "scale(1.5, 1)";
         ball.style.animation = "rotate 10s ease infinite";
         ball.style.marginLeft = "-250px";
         ball.style.marginTop = "-250px";
-        ball.style.opacity = "0.5";
+        ball.style.opacity = "0.4";
         ball.style.willChange = "transform opacity";
         ball.style.transition = "opacity 0.5s ease-in-out";
+
+
+        // check change of css dakr mode
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (e.matches) {
+                ball.style.background = "linear-gradient(to right, aquamarine, purple)";
+            } else {
+                ball.style.background = "linear-gradient(to right, aquamarine, violet)";
+            }
+        });
+
 
         document.body.appendChild(ball);
         
@@ -532,7 +548,7 @@
                     left: `${clientX}px`,
                     top: `${clientY}px`
                 }, {
-                    duration: 2000,
+                    duration: 250,
                     fill: 'forwards',
                 });
             }
@@ -546,27 +562,7 @@
         //select element with mini-map class
         const miniMap = document.querySelector('.mini-map');
         
-        document.addEventListener("keydown", function (event){
-            //  prevent U key
-            if(event.keyCode == 85){
-                event.preventDefault();
-            }
-            //  prevent I key
-            if(event.keyCode == 73){
-                event.preventDefault();
-            }
-            //  prevent s key
-            if(event.keyCode == 83){
-                event.preventDefault();
-            }
-            //  prevent F12 key
-            if(event.keyCode == 123){
-                event.preventDefault();
-            }
-            //  prevent F5 key
-            if(event.keyCode == 116){
-                event.preventDefault();
-            }
+        document.addEventListener("keydown", function (event) {
             // on arrow keys up and down scroll page 2x faster
             if (event.keyCode == 38 || event.keyCode == 40) {
                 event.preventDefault();
@@ -608,7 +604,7 @@
                 cursor.style.height = "24px";
                 cursor.style.opacity = 0.1;
                 body.style.cursor = "none";
-                ball.style.opacity = "0.3";
+                ball.style.opacity = "0.25";
             })
             link.addEventListener('mouseleave', () => {
                 gsap.to(cursor, 0.2, {scale: 1})
@@ -617,7 +613,7 @@
                 cursor.style.height = "20px";
                 cursor.style.opacity = 0;
                 body.style.cursor = "default";
-                ball.style.opacity = "0.5";
+                ball.style.opacity = "0.4";
             })
         })
 
@@ -626,13 +622,13 @@
                 gsap.to(cursor, 0.2, {scale: 1.5})
                 cursor.style.opacity = 0.1;
                 body.style.cursor = "none";
-                ball.style.opacity = "0.3";
+                ball.style.opacity = "0.25";
             })
             card.addEventListener('mouseleave', () => {
                 gsap.to(cursor, 0.2, {scale: 1})
                 cursor.style.opacity = 0;
                 body.style.cursor = "default";
-                ball.style.opacity = "0.5";
+                ball.style.opacity = "0.4";
             })
         })
 

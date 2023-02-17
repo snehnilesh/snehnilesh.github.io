@@ -18,7 +18,7 @@
 
     <div class="menu">
         <p class="menu-item-on">Work</p>
-        <a onclick="location.href='/about.html'" class="menu-item">About</a>
+        <a onclick="location.href='/about'" class="menu-item">About</a>
     </div>
 
     <div id="cards">
@@ -525,6 +525,7 @@
     }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="/assets/js/preventKeys.js"></script>
 <script>
     document.addEventListener("keydown", function (event) {
         if (event.ctrlKey) {
