@@ -243,18 +243,18 @@
             mouseX = e.clientX;
             mouseY = e.clientY;
 
-            gsap.to(cursor, 0.25, { x: mouseX, y: mouseY })
+            gsap.to(cursor, 0.2, { x: mouseX, y: mouseY })
         })
 
         document.querySelectorAll('a,p').forEach(link => {
             link.addEventListener('mouseenter', () => {
-                gsap.to(cursor, 0.25, { scale: 1.5 })
+                gsap.to(cursor, 0.2, { scale: 1.5 })
                 cursor.style.borderRadius = "16px";
                 cursor.style.width = "60px";
                 cursor.style.height = "24px";
             })
             link.addEventListener('mouseleave', () => {
-                gsap.to(cursor, 0.25, { scale: 1 })
+                gsap.to(cursor, 0.2, { scale: 1 })
                 cursor.style.borderRadius = "999px";
                 cursor.style.width = "20px";
                 cursor.style.height = "20px";
