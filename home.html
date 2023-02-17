@@ -40,6 +40,7 @@
 
     :root {
         --select-menu-item: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        --card-color: rgb(16, 16, 16);
     }
 
     body {
@@ -108,6 +109,9 @@
         overflow: hidden;
         line-height: 117%;
         padding-top: 0.75rem;
+        opacity: 0.3;
+        font-weight: 300;
+        cursor: none;
     }
 
     .menu-item,
@@ -115,8 +119,6 @@
         color: white;
         font-size: clamp(1.2rem, 1.3vw, 1.4rem);
         text-decoration: none;
-        pointer-events: none;
-        transform: translate3d(0%, 0%, 0px);
         will-change: transform;
         transform: translate3d(0, 110%, 0);
         pointer-events: all;
@@ -135,22 +137,11 @@
         white-space: nowrap;
     }
 
-    .menu-item {
-        opacity: 0.3;
-        font-weight: 300;
-        cursor: none;
-    }
-
-    :root {
-        --card-color: rgb(16, 16, 16);
-    }
-
     .cursor {
         position: fixed;
         left: 0;
         pointer-events: none;
         border-radius: 50%;
-        transition: transform 0s;
         background: white;
         top: 0;
         width: 20px;
@@ -160,7 +151,8 @@
         transition: opacity 0.5s,
             border-radius 0.2s,
             width 0.2s,
-            height 0.2s
+            height 0.2s,
+            transform 0s;
     }
 
     .slide-up {
@@ -184,6 +176,7 @@
             opacity: 0;
         }
     }
+    
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 <script src="/assets/js/cursorMain.js"></script>

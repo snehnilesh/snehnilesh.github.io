@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work</title>
-    <link rel="preload" href="about.html" as="document">
-    <link rel="preload" href="launchdock.html" as="document">
-    <link rel="preload" href="sftoolkit.html" as="document">
-    <link rel="preload" href="substrack.html" as="document">
-    <link rel="preload" href="mathtoolkit.html" as="document">
+    <link rel="preload" href="about" as="document">
+    <link rel="preload" href="launchdock" as="document">
+    <link rel="preload" href="sftoolkit" as="document">
+    <link rel="preload" href="substrack" as="document">
+    <link rel="preload" href="mathtoolkit" as="document">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
     </div>
 
     <div id="cards">
-        <div class="card first-card card-on slide-up" onclick="location.href='/launchdock.html'">
+        <div class="card first-card card-on slide-up" onclick="location.href='/launchdock'">
             <div class="card-content">
                 <div class="card-top">
                     <img src="/assets/images/app-icons/launchdock.png" class="card-image" alt="LaunchDock">
@@ -33,7 +33,7 @@
                 <img src="/assets/images/app-previews/launchdock.png" class="card-preview-image" alt="LaunchDock Preview">
             </div>
         </div>
-        <div class="card slide-up" onclick="location.href='/sftoolkit.html'">
+        <div class="card slide-up" onclick="location.href='/sftoolkit'">
             <div class="card-content">
                 <div class="card-top">
                     <img src="/assets/images/app-icons/sftoolkit.png" class="card-image" alt="SFToolkit">
@@ -44,7 +44,7 @@
                 <img src="/assets/images/app-previews/sftoolkit.png" class="card-preview-image" alt="SFToolkit Preview">
             </div>
         </div>
-        <div class="card slide-up" onclick="location.href='/substrack.html'">
+        <div class="card slide-up" onclick="location.href='/substrack'">
             <div class="card-content">
                 <div class="card-top">
                     <img src="/assets/images/app-icons/substrack-dark.png" class="card-image" alt="SubsTrack">
@@ -55,7 +55,7 @@
                 <img src="/assets/images/app-previews/substrack.png" class="card-preview-image" alt="SubsTrack Preview">
             </div>
         </div>
-        <div class="card last-card slide-up" onclick="location.href='/mathtoolkit.html'">
+        <div class="card last-card slide-up" onclick="location.href='/mathtoolkit'">
             <div class="card-content">
                 <div class="card-top">
                     <img src="/assets/images/app-icons/mathtoolkit.png" class="card-image" alt="MathToolkit">
@@ -81,6 +81,7 @@
 
     :root {
         --select-menu-item: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        --card-color: rgba(20, 20, 20, 0.2);
     }
 
     body {
@@ -141,6 +142,9 @@
         padding-left: 2.5rem;
         overflow: hidden;
         line-height: 117%;
+        opacity: 0.3;
+        font-weight: 300;
+        cursor: none;
     }
 
     .menu-item,
@@ -148,8 +152,6 @@
         color: white;
         font-size: clamp(1.2rem, 1.3vw, 1.4rem);
         text-decoration: none;
-        pointer-events: none;
-        transform: translate3d(0%, 0%, 0px);
         will-change: transform;
         transform: translate3d(0, 110%, 0);
         pointer-events: all;
@@ -183,18 +185,7 @@
         margin-left: 22px;
         white-space: nowrap;
     }
-
-    .menu-item {
-        opacity: 0.3;
-        font-weight: 300;
-        cursor: none;
-    }
-
-    :root {
-        /* --card-color: rgb(20, 20, 20); */
-        --card-color: rgba(20, 20, 20, 0.2);
-    }
-
+    
     #cards {
         height: 80vh;
         display: flex;
@@ -342,7 +333,6 @@
         left: 0;
         pointer-events: none;
         border-radius: 50%;
-        transition: transform 0s;
         background: white;
         top: 0;
         width: 20px;
@@ -352,7 +342,8 @@
         transition: opacity 0.5s,
             border-radius 0.2s,
             width 0.2s,
-            height 0.2s
+            height 0.2s,
+            transform 0s;
     }
 
     .slide-up {
@@ -653,22 +644,6 @@
             behavior: "smooth"
         });
     });
-
-    function openCard(card) {
-        // get the card title
-        const title = card.querySelector(".card-title").innerHTML;
-        const titleNoSpaces = title.replace(/\s/g, '').toLowerCase();
-
-        // redirect to the card's page
-        const url = window.location.href;
-        const domain = url.substring(0, url.lastIndexOf('/') + 1);
-
-        // get the card's page
-        const cardPage = domain + titleNoSpaces + ".html";
-
-        // redirect to the card's page
-        window.location = cardPage;
-    }
 </script>
 
 </html>

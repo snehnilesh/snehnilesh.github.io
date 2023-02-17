@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,30 +8,31 @@
     <title>About</title>
     <link rel="preload" href="work.html" as="document">
 </head>
+
 <body>
     <div class="cursor"></div>
 
     <div class="menu">
-        <a onclick="location.href='/work.html'" class="menu-item work">Work</a>
+        <a onclick="location.href='/work'" class="menu-item work">Work</a>
         <p class="menu-item-on about">About</p>
     </div>
 
     <div class="main">
         <div class="full-height hidden">
             <div class="text-main">
-                An Independant Developer currently <br/>
-                studying Computer Science at the <br/>
+                An Independant Developer currently <br />
+                studying Computer Science at the <br />
                 University of Kent.
-                <br/><br/>
-                Passionate about problem solving <br/>
-                and the future, deeply enjoying the <br/>
-                process of learning and creating. <br/>
+                <br /><br />
+                Passionate about problem solving <br />
+                and the future, deeply enjoying the <br />
+                process of learning and creating. <br />
             </div>
         </div>
 
         <div class="text-main full-height hidden">
             Education
-            
+
             <div class="text-header inset hidden spacer-top-large">
                 University of Kent
             </div>
@@ -69,7 +71,7 @@
             </div>
             <div class="text-sub inset hidden spacer-top">
                 Used in the creation of logos, graphics and </br>
-                animations for both branding and marketing <br/>
+                animations for both branding and marketing <br />
                 purposes.
             </div>
 
@@ -80,8 +82,8 @@
                 Advanced
             </div>
             <div class="text-sub inset hidden spacer-top">
-                Frequently used for tracking and analysing <br/>
-                data, along with creating presentations and <br/>
+                Frequently used for tracking and analysing <br />
+                data, along with creating presentations and <br />
                 reports.
             </div>
 
@@ -92,8 +94,8 @@
                 Advanced
             </div>
             <div class="text-sub inset hidden spacer-top">
-                I regularly use Sketch to craft interfaces <br/>
-                for my projects, creating prototypes <br/>
+                I regularly use Sketch to craft interfaces <br />
+                for my projects, creating prototypes <br />
                 and testing to improve the user experience.
             </div>
         </div>
@@ -106,13 +108,13 @@
             </div>
             <div class="text-subdate inset hidden">
                 Advanced
-            </div>  
+            </div>
             <div class="text-sub inset hidden spacer-top">
-                Regularly participate in collaborative <br/>
-                projects, most notably the notes project in <br/>
-                conjunction with fellow programmer Avi <br/>
+                Regularly participate in collaborative <br />
+                projects, most notably the notes project in <br />
+                conjunction with fellow programmer Avi <br />
                 Mukesh.
-            </div> 
+            </div>
         </div>
 
         <div class="text-main full-height hidden">
@@ -160,7 +162,7 @@
             <div class="text-sub inset hidden">
                 Pandas
             </div>
-                    
+
             <!-- <div class="text-header inset hidden spacer-top-large">
                 SQL
             </div> -->
@@ -181,7 +183,7 @@
 
         <div class="text-main bottom hidden">
             Contact
-            
+
             <div class="hidden spacer-top-large">
                 <div class="text-sub inset hidden">
                     <a onclick="location.href='mailto: snehnilesh123@hotmail.com'">Email</a>
@@ -201,43 +203,56 @@
             </div>
         </div>
     </div>
-    
+
     <div class="mini-map hidden"></div>
     <div class="mini-map-selection hidden"></div>
 </body>
 <style>
     @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
     :root {
         --select-menu-item: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
+
     body {
         white-space: nowrap;
         opacity: 0;
         margin: 0;
         padding: 0;
     }
+
     html {
         font-family: 'SF Pro Display', sans-serif;
         background-color: rgb(16, 16, 16);
         scroll-behavior: smooth;
         overscroll-behavior: none;
         cursor: none;
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-        -webkit-user-select: none; /* Safari */        
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* IE10+/Edge */
-        user-select: none; /* Standard */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+        -webkit-user-select: none;
+        /* Safari */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* IE10+/Edge */
+        user-select: none;
+        /* Standard */
     }
+
     *::-webkit-scrollbar {
         display: none;
     }
+
     .spacer-top {
         margin-top: 1.5rem;
     }
+
     .spacer-top-large {
         margin-top: 5rem;
     }
+
     .menu {
         position: fixed;
         display: flex;
@@ -249,53 +264,59 @@
         scale: 0.8;
         margin-top: -0.8rem;
     }
+
     .menu-items {
         display: flex;
         justify-content: center;
         align-items: center;
     }
+
     .menu-item-on {
         padding-left: 1.25rem;
         overflow: hidden;
         line-height: 117%;
     }
+
     .menu-item {
         padding-right: 1.25rem;
         overflow: hidden;
         line-height: 117%;
+        opacity: 0.3 !important;
+        font-weight: 300;
     }
-    .menu-item, .menu-item-on {
+
+    .menu-item,
+    .menu-item-on {
         color: white;
         font-size: clamp(1.2rem, 1.3vw, 1.4rem);
         text-decoration: none;
-        pointer-events: none; transform: translate3d(0%, 0%, 0px);
         will-change: transform;
         transform: translate3d(0, 110%, 0);
         pointer-events: all;
         transition: opacity 300ms var(--select-menu-item);
     }
-    .menu-item-on, .menu-item:hover {
+
+    .menu-item-on,
+    .menu-item:hover {
         opacity: 0.8 !important;
         font-weight: 425;
     }
+
     .menu div {
         margin-right: 22px;
         margin-left: 22px;
         white-space: nowrap;
     }
-    .menu-item {
-        opacity: 0.3 !important;
-        font-weight: 300;
-    }
+
     .bottom {
         margin-bottom: 50%;
     }
+
     .cursor {
         position: fixed;
         left: 0;
         pointer-events: none;
         border-radius: 50%;
-        transition: transform 0s;
         background: white;
         top: 0;
         width: 20px;
@@ -303,10 +324,12 @@
         z-index: 9999;
         opacity: 0;
         transition: opacity 0.5s,
-                    border-radius 0.2s,
-                    width 0.2s,
-                    height 0.2s
+            border-radius 0.2s,
+            width 0.2s,
+            height 0.2s,
+            transform 0s;
     }
+
     .mini-map {
         position: fixed;
         padding-top: 30%;
@@ -314,6 +337,7 @@
         width: 15%;
         will-change: transform;
     }
+
     .mini-map-selection {
         position: fixed;
         display: flex;
@@ -330,6 +354,7 @@
         scale: 0.25;
         transform-origin: top left;
     }
+
     .main {
         flex-wrap: nowrap;
         flex-direction: column;
@@ -341,9 +366,11 @@
         line-height: 1.5;
         margin-top: 18vw;
     }
+
     .full-height {
         margin-bottom: 28%;
     }
+
     .text-main {
         /* font-size: 3.5rem; */
         font-size: clamp(1rem, 2.75vw, 3.5rem);
@@ -352,6 +379,7 @@
         text-align: left;
         /* transition: all; */
     }
+
     .text-header {
         font-size: clamp(0.875rem, 2vw, 2.625rem);
         color: white;
@@ -359,6 +387,7 @@
         text-align: left;
         width: 80%;
     }
+
     .text-sub {
         font-size: clamp(0.75rem, 1.25vw, 1.75rem);
         color: white;
@@ -367,6 +396,7 @@
         text-align: left;
         width: 80%;
     }
+
     .text-subdate {
         font-size: clamp(0.8rem, 1.5vw, 1.8rem);
         color: white;
@@ -375,107 +405,139 @@
         text-align: left;
         width: 80%
     }
+
     .inset {
         margin-left: 0;
     }
+
     a {
         text-decoration: none;
         color: white;
         pointer-events: all;
     }
-    a:hover, p:hover, .mini-map-selection:hover {
+
+    a:hover,
+    p:hover,
+    .mini-map-selection:hover {
         cursor: none;
     }
+
     .hidden {
         opacity: 0;
         transform: translateY(8px);
         transition: opacity ease 1s,
-                    transform ease 1s;
+            transform ease 1s;
 
     }
+
     .visible {
         opacity: 1;
         transform: translateY(0px);
         transition: opacity ease 1s,
-                    transform ease 1s;
+            transform ease 1s;
     }
+
     .visible-60 {
         opacity: 0.6 !important;
         transform: translateY(8px);
         transform: translateY(0px);
         transition: opacity ease 1s;
-                    /* transform ease 1s; */
+        /* transform ease 1s; */
     }
 
-    .hidden:nth-child(1), .visible:nth-child(1) {
+    .hidden:nth-child(1),
+    .visible:nth-child(1) {
         transition-delay: 0s;
     }
-    .hidden:nth-child(2), .visible:nth-child(2) {
+
+    .hidden:nth-child(2),
+    .visible:nth-child(2) {
         transition-delay: 0.075s;
     }
-    .hidden:nth-child(3), .visible:nth-child(3) {
+
+    .hidden:nth-child(3),
+    .visible:nth-child(3) {
         transition-delay: 0.15s;
     }
-    .hidden:nth-child(4), .visible:nth-child(4) {
+
+    .hidden:nth-child(4),
+    .visible:nth-child(4) {
         transition-delay: 0.225s;
     }
-    .hidden:nth-child(5), .visible:nth-child(5) {
+
+    .hidden:nth-child(5),
+    .visible:nth-child(5) {
         transition-delay: 0.3s;
     }
 
     @keyframes fadeUp {
-        0% {transform: translateY(64px);opacity: 0;}
+        0% {
+            transform: translateY(64px);
+            opacity: 0;
+        }
     }
+
     @media(prefers-reduced-motion: reduce) {
         .hidden {
             transition: none;
         }
     }
+
     @media (prefers-color-scheme: light) {
+
         /* text */
         .text-main {
             color: black;
         }
+
         .text-header {
             color: black;
         }
+
         .text-sub {
             color: black;
         }
+
         .text-subdate {
             color: black;
         }
+
         a {
             color: black;
         }
+
         .menu-item {
             color: black;
         }
+
         .menu-item-on {
             color: black;
         }
+
         /* background */
         html {
             background-color: white;
         }
+
         .mini-map-selection {
             background-color: rgba(0, 0, 0, 0.025);
-        }
-        /* border */
-        .mini-map-selection {
             border: 1px solid rgba(0, 0, 0, 0.4);
         }
+
         .cursor {
             background: black;
         }
     }
+
     @keyframes rotate {
         from {
             rotate: 0deg;
         }
+
         50% {
             scale: 1 1.5;
         }
+
         to {
             rotate: 360deg;
         }
@@ -485,17 +547,17 @@
 <script src="/assets/js/cursorMain.js"></script>
 <script src="/assets/js/preventKeys.js"></script>
 <script>
-    window.onload = function() {
+    window.onload = function () {
         let isMobile = navigator.appVersion.includes('iPhone') || navigator.appVersion.includes('Android');
-        
+
         window.scrollTo(0, 0);
-        document.addEventListener('contextmenu', 
+        document.addEventListener('contextmenu',
             event => event.preventDefault()
         );
 
         //select element with mini-map class
         const miniMap = document.querySelector('.mini-map');
-        
+
         document.addEventListener("keydown", function (event) {
             // on arrow keys up and down scroll page 2x faster
             if (event.keyCode == 38 || event.keyCode == 40) {
@@ -548,27 +610,27 @@
         // mini map opacity to 0.6
         miniMap.style.opacity = 0.6;
 
-        if(!isMobile) {
+        if (!isMobile) {
             fetch('about.html')
-            .then(response => response.text())
-            .then(data => {
-                miniMap.innerHTML = data;
-                // remove all elements with class "menu" within data
-                miniMap.querySelectorAll('.menu').forEach(e => e.remove());
-                // remove all elements with class "mini map" within data
-                miniMap.querySelectorAll('.mini-map').forEach(e => e.remove());
-                // remove all elements with class "mini map selection" within data
-                miniMap.querySelectorAll('.mini-map-selection').forEach(e => e.remove());
-                // remove class hidden from any elements with class hidden
-                miniMap.querySelectorAll('.hidden').forEach(e => e.classList.remove('hidden'));
-                // replace class inset with style margin-left: 2rem
-                miniMap.querySelectorAll('.inset').forEach(e => e.style.marginLeft = "5rem");
-                // remove head
-                // miniMap.querySelector('head').innerHTML = '';
-                // remove js and css
-                miniMap.querySelectorAll('script').forEach(e => e.remove());
-                miniMap.querySelectorAll('style').forEach(e => e.remove());
-            });
+                .then(response => response.text())
+                .then(data => {
+                    miniMap.innerHTML = data;
+                    // remove all elements with class "menu" within data
+                    miniMap.querySelectorAll('.menu').forEach(e => e.remove());
+                    // remove all elements with class "mini map" within data
+                    miniMap.querySelectorAll('.mini-map').forEach(e => e.remove());
+                    // remove all elements with class "mini map selection" within data
+                    miniMap.querySelectorAll('.mini-map-selection').forEach(e => e.remove());
+                    // remove class hidden from any elements with class hidden
+                    miniMap.querySelectorAll('.hidden').forEach(e => e.classList.remove('hidden'));
+                    // replace class inset with style margin-left: 2rem
+                    miniMap.querySelectorAll('.inset').forEach(e => e.style.marginLeft = "5rem");
+                    // remove head
+                    // miniMap.querySelector('head').innerHTML = '';
+                    // remove js and css
+                    miniMap.querySelectorAll('script').forEach(e => e.remove());
+                    miniMap.querySelectorAll('style').forEach(e => e.remove());
+                });
 
             miniMap.style.scale = "0.25";
             miniMap.style.transformOrigin = "top left";
@@ -578,8 +640,8 @@
                 let scroll = window.scrollY;
                 // miniMap.style.marginTop = `-${scroll/2}px`;
                 miniMap.style.transition = 'unset'
-                miniMap.style.transform = `translateY(-${scroll/2}px)`;
-                miniMapSelection.style.transform = `translateY(${scroll/2}px)`;
+                miniMap.style.transform = `translateY(-${scroll / 2}px)`;
+                miniMapSelection.style.transform = `translateY(${scroll / 2}px)`;
             })
 
             // make mini map selection size reflect viewport size
@@ -596,7 +658,7 @@
 
             // start the .main div at the leftmost position of the menu bar tab with the text "Work"
             let textSub = document.querySelectorAll('.text-sub');
-            
+
             textSub.forEach(text => {
                 text.style.marginLeft = aboutTabLeft - workTabLeft + 16 + "px";
                 let inset = document.querySelectorAll('.inset');
@@ -678,7 +740,7 @@
             // change font size of text-sub class
             // get current font size
             textSub.forEach(el => {
-                el.style.fontSize =  "clamp(0.75rem, 4vw, 4rem)";
+                el.style.fontSize = "clamp(0.75rem, 4vw, 4rem)";
             })
 
             // change font size of text-header class
@@ -724,6 +786,7 @@
         });
     }
 </script>
+
 </html>
 
 <!-- font -->
