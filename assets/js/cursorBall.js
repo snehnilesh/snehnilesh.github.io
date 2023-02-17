@@ -28,12 +28,25 @@ document.querySelectorAll('a, p').forEach(link => {
         cursor.style.borderRadius = "16px";
         cursor.style.width = "60px";
         cursor.style.height = "24px";
+        cursor.style.opacity = 0.1;
     })
     link.addEventListener('mouseleave', () => {
         gsap.to(cursor, 0.1, {scale: 1})
         cursor.style.borderRadius = "999px";
         cursor.style.width = "20px";
         cursor.style.height = "20px";
+        cursor.style.opacity = 0;
+    })
+})
+
+document.querySelectorAll('.mini-map-selection').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        gsap.to(cursor, 0.1, {scale: 1.5})
+        cursor.style.opacity = 0.1;
+    })
+    card.addEventListener('mouseleave', () => {
+        gsap.to(cursor, 0.01, {scale: 1})
+        cursor.style.opacity = 0;
     })
 })
 
@@ -45,13 +58,3 @@ document.querySelectorAll('.card').forEach(card => {
         gsap.to(cursor, 0.2, { scale: 1 })
     })
 })
-
-// after 1 second of inactivity, hide the cursor
-let timeout;
-document.addEventListener('mousemove', () => {
-    clearTimeout(timeout);
-    cursor.style.opacity = 0.1;
-    timeout = setTimeout(() => {
-        cursor.style.opacity = 0;
-    }, 1000);
-});
