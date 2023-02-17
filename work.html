@@ -525,6 +525,7 @@
     }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="/assets/js/cursorMain.js"></script>
 <script src="/assets/js/preventKeys.js"></script>
 <script>
     document.addEventListener("keydown", function (event) {
@@ -602,55 +603,6 @@
 
         const card = cards.children[currentCard - 1];
         card.classList.add("card-on");
-    });
-
-    gsap.set('.cursor', { xPercent: -50, yPercent: -50 })
-
-    let cursor = document.querySelector('.cursor')
-
-    let mouseX;
-    let mouseY;
-
-    window.addEventListener('mousemove', e => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        gsap.to(cursor, 0.2, { x: mouseX, y: mouseY })
-    })
-
-    document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            gsap.to(cursor, 0.2, { scale: 1.5 })
-        })
-        card.addEventListener('mouseleave', () => {
-            gsap.to(cursor, 0.2, { scale: 1 })
-
-        })
-    })
-
-    document.querySelectorAll('a,p,.footer-contents').forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            gsap.to(cursor, 0.2, { scale: 1.5 })
-            cursor.style.borderRadius = "16px";
-            cursor.style.width = "60px";
-            cursor.style.height = "24px";
-        })
-        link.addEventListener('mouseleave', () => {
-            gsap.to(cursor, 0.2, { scale: 1 })
-            cursor.style.borderRadius = "999px";
-            cursor.style.width = "20px";
-            cursor.style.height = "20px";
-        })
-    })
-
-    // after 1 second of inactivity, hide the cursor
-    let timeout;
-    document.addEventListener('mousemove', () => {
-        clearTimeout(timeout);
-        cursor.style.opacity = 0.1;
-        timeout = setTimeout(() => {
-            cursor.style.opacity = 0;
-        }, 1000);
     });
 
     // add scroll-snap-type: x mandatory; to #cards after 1 second

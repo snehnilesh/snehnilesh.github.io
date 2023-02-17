@@ -46,6 +46,16 @@ document.querySelectorAll('.mini-map-selection').forEach(card => {
     })
 })
 
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        gsap.to(cursor, 0.2, { scale: 1.5 })
+    })
+    card.addEventListener('mouseleave', () => {
+        gsap.to(cursor, 0.2, { scale: 1 })
+
+    })
+})
+
 // after 1 second of inactivity, hide the cursor
 let timeout;
 document.addEventListener('mousemove', () => {
