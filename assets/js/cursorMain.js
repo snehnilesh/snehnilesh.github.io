@@ -117,7 +117,7 @@ if (!isMobile) {
     ball.style.opacity = `${ballMaxOpacity}`;
 }
 ball.style.willChange = "transform opacity";
-ball.style.transition = "opacity 0.5s ease-in-out";
+ball.style.transition = "opacity 0.5s ease-in-out, transform 0.5s ease-in-out";
 
 // check change of css dark mode
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
@@ -141,7 +141,12 @@ document.body.onpointermove = function(e) {
             duration: 250,
             fill: 'forwards',
         });
-        ball.style.opacity = `${ballMaxOpacity}`;
+        const containsMiniMapSelection = document.elementFromPoint(clientX, clientY).classList.contains('mini-map-selection');
+        const containsCard = document.elementFromPoint(clientX, clientY).classList.contains('card');
+        const containsFooter = document.elementFromPoint(clientX, clientY).classList.contains('footer');
+        if (document.elementFromPoint(clientX, clientY).tagName !== "A" && document.elementFromPoint(clientX, clientY).tagName !== "P" && !containsMiniMapSelection && !containsCard && !containsFooter) {
+            ball.style.opacity = `${ballMaxOpacity}`;
+        }
     }
 }
 
