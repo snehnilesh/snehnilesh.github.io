@@ -7,8 +7,18 @@ document.addEventListener("keydown", function (event) {
     if(event.keyCode == 73 && (navigator.platform.match("Mac") ? event.metaKey : event.ctrlKey)){
         event.preventDefault();
     }
-    // prevent right click
-    if(event.button == 2) {
+    // prevent command shift u
+    if(event.keyCode == 85 && (navigator.platform.match("Mac") ? event.metaKey : event.shiftKey)){
+        event.preventDefault();
+    }
+    // prevent command option u
+    if(event.keyCode == 85 && (navigator.platform.match("Mac") ? event.metaKey : event.altKey)){
         event.preventDefault();
     }
 });
+
+// prevent context menu
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+// prevent right click
+document.addEventListener('mousedown', event => event.preventDefault());

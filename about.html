@@ -204,8 +204,8 @@
         </div>
     </div>
 
-    <div class="mini-map hidden"></div>
     <div class="mini-map-selection hidden"></div>
+    <div class="mini-map hidden"></div>
 </body>
 <style>
     @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
@@ -441,33 +441,33 @@
         opacity: 0.6 !important;
         transform: translateY(8px);
         transform: translateY(0px);
-        transition: opacity ease 1s;
-        /* transform ease 1s; */
+        transition: opacity ease 1s,
+        transform ease 1s;
     }
 
-    .hidden:nth-child(1),
-    .visible:nth-child(1) {
+    .main .hidden:nth-child(1),
+    .main .visible:nth-child(1) {
         transition-delay: 0s;
     }
 
-    .hidden:nth-child(2),
-    .visible:nth-child(2) {
-        transition-delay: 0.075s;
+    .main .hidden:nth-child(2),
+    .main .visible:nth-child(2) {
+        transition-delay: 0.1s;
     }
 
-    .hidden:nth-child(3),
-    .visible:nth-child(3) {
-        transition-delay: 0.15s;
+    .main .hidden:nth-child(3),
+    .main .visible:nth-child(3) {
+        transition-delay: 0.2s;
     }
 
-    .hidden:nth-child(4),
-    .visible:nth-child(4) {
-        transition-delay: 0.225s;
-    }
-
-    .hidden:nth-child(5),
-    .visible:nth-child(5) {
+    .main .hidden:nth-child(4),
+    .main .visible:nth-child(4) {
         transition-delay: 0.3s;
+    }
+
+    .main .hidden:nth-child(5),
+    .main .visible:nth-child(5) {
+        transition-delay: 0.4s;
     }
 
     @keyframes fadeUp {
@@ -548,12 +548,8 @@
 <script src="/assets/js/preventKeys.js"></script>
 <script>
     window.onload = function () {
-        let isMobile = navigator.appVersion.includes('iPhone') || navigator.appVersion.includes('Android');
-
         window.scrollTo(0, 0);
-        document.addEventListener('contextmenu',
-            event => event.preventDefault()
-        );
+        let isMobile = navigator.appVersion.includes('iPhone') || navigator.appVersion.includes('Android');
 
         //select element with mini-map class
         const miniMap = document.querySelector('.mini-map');
@@ -635,11 +631,12 @@
             miniMap.style.scale = "0.25";
             miniMap.style.transformOrigin = "top left";
 
+
             // scroll mini-map in opposite direction of scroll
             window.addEventListener('scroll', () => {
                 let scroll = window.scrollY;
                 // miniMap.style.marginTop = `-${scroll/2}px`;
-                miniMap.style.transition = 'unset'
+                // miniMap.style.transition = 'unset'
                 miniMap.style.transform = `translateY(-${scroll / 2}px)`;
                 miniMapSelection.style.transform = `translateY(${scroll / 2}px)`;
             })
@@ -784,6 +781,13 @@
         hiddenElements.forEach(element => {
             observer.observe(element);
         });
+
+        // after one second remove animations from mini-map-selection
+        setTimeout(() => {
+            miniMap.style.transition = 'unset'
+        }, 500);
+
+        miniMapSelection.style.transition = 'unset';
     }
 </script>
 

@@ -1,5 +1,8 @@
 window.onload = function() {
     window.scrollTo(0, 0);
+    document.addEventListener('contextmenu', 
+        event => event.preventDefault()
+    );
 }
 
 gsap.set('.cursor',{xPercent:-50, yPercent: -50})
@@ -133,6 +136,9 @@ document.body.appendChild(ball);
 document.body.onpointermove = function(e) {
     if (!isMobile) {
         const { clientX, clientY } = e;
+
+        ball.style.left = `${clientX-20}px`;
+        ball.style.top = `${clientY-20}px`;
 
         ball.animate ({
             left: `${clientX}px`,

@@ -30,7 +30,8 @@
                         LaunchDock
                     </div>
                 </div>
-                <img src="/assets/images/app-previews/launchdock.png" class="card-preview-image" alt="LaunchDock Preview">
+                <img src="/assets/images/app-previews/launchdock.png" class="card-preview-image"
+                    alt="LaunchDock Preview">
             </div>
         </div>
         <div class="card slide-up" onclick="location.href='/sftoolkit'">
@@ -63,7 +64,8 @@
                         MathToolkit
                     </div>
                 </div>
-                <img src="/assets/images/app-previews/mathtoolkit.png" class="card-preview-image" alt="MathToolkit Preview">
+                <img src="/assets/images/app-previews/mathtoolkit.png" class="card-preview-image"
+                    alt="MathToolkit Preview">
             </div>
         </div>
     </div>
@@ -184,7 +186,7 @@
         margin-left: 22px;
         white-space: nowrap;
     }
-    
+
     #cards {
         height: 80vh;
         display: flex;
@@ -479,7 +481,7 @@
 
         .card::before {
             background: radial-gradient(1000px circle at var(--mouse-x) var(--mouse-y),
-            rgba(228, 228, 228, 0.1),
+                    rgba(228, 228, 228, 0.1),
                     transparent 40%);
         }
 
@@ -514,6 +516,20 @@
         .card-preview-image {
             height: 100%;
             object-fit: scale-down;
+        }
+    }
+
+    @keyframes rotate {
+        from {
+            rotate: 0deg;
+        }
+
+        50% {
+            scale: 1 1.5;
+        }
+
+        to {
+            rotate: 360deg;
         }
     }
 </style>
